@@ -9,3 +9,6 @@ js/defs/version.json
 */Gemfile.lock
 static/assets/*
 server/*/secret.yml
+
+.DS_Store
+.idea

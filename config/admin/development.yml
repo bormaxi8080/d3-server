@@ -26,30 +26,30 @@
 :node_backends:
   :local:
     :node_backend: 'http://127.0.0.1:3000/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :web_alpha:
     :node_backend: 'http://sqware-dev.socialquantum.ru/mzoo_web/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :fight_alpha:
     :node_backend: 'http://sqware-dev.socialquantum.ru/mzoo_fight/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :prod:
     :node_backend: 'http://88.212.226.118/mzoo_beta/mzoo_web/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :beta2:
     :node_backend: 'http://88.212.226.118/mzoo_beta2/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :beta3:
     :node_backend: 'http://88.212.226.118/mzoo_beta3/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
   :int_prod:
     :node_backend: 'http://nweb26.socialquantum.com/mzoo_int_prod/backend'
-    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+    :secret_key: ''
 
 :admin:
   :bin_path: '../../static/_bin'
   :node_backend: 'http://127.0.0.1:3000/backend/'
-  :node_secret: '0e616dc02e3b538e077454ff93e4eca6'
+  :node_secret: ''
   :application_server: 'Enchanted::Server'
   :js_dir: '../../static/_bin/admin_users' #Rails.root.join(admin_app_dir)
   :node_config_path: '../../server/config/'
@@ -59,7 +59,7 @@
 game_server:
   backend: 'http://127.0.0.1:3000/backend'
   ping_url: '/health'
-  internal_sig: '0e616dc02e3b538e077454ff93e4eca6'
+  internal_sig: ''
 
 shards:
   shard_0:
