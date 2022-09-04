@@ -1,0 +1,7 @@
+.selected-user.pull-right
+  - if exist_core_user?
+    = 'Player selected: '
+    %strong= current_core_user['social_id']
+  - else
+    %strong= 'User not selected'
+.clearfix

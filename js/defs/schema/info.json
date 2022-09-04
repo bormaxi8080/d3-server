@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "info",
+    "type": "object",
+    "required": [ "default_states" ],
+    "additionalProperties": false,
+    "properties":{
+        "schema_id": { "type": "string", "enum": [ "info" ] },
+        "default_states": {
+            "type": "object",
+            "required": [ "weapon", "victim", "killer" ],
+            "additionalProperties": false,
+            "properties": {
+                "weapon": {
+                    "type": "object",
+                    "required": [ "img", "name", "description"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "img": {"type": "string"},
+                        "name": {"type": "string"},
+                        "description": {"type": "string"}
+                    }
+                },
+                "victim": {
+                    "type": "object",
+                    "required": [ "img", "name", "description"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "img": {"type": "string"},
+                        "name": {"type": "string"},
+                        "description": {"type": "string"}
+                    }
+                },
+                "killer": {
+                    "type": "object",
+                    "required": [ "img", "name", "description"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "img": {"type": "string"},
+                        "name": {"type": "string"},
+                        "description": {"type": "string"}
+                    }
+                }
+            }
+        }
+    }
+}

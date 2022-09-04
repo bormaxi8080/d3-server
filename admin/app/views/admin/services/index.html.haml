@@ -1,0 +1,34 @@
+-if @error
+  %div{ style: 'font-size:18px; font-weight: bold; margin: 10px 0px 20px 0;' }
+    %div{ style: 'font-weight:normal; font-size:16px; padding: 10px; background-color: #FFD6CB; border: 1px solid #000;' }
+      @error
+
+= form_tag '/services/export', style: 'float: left' do
+  = hidden_field_tag 'dump', '', id: 'dump'
+  = button_tag 'download dump', onclick: 'onExport();', class: 'btn btn-primary'
+&nbsp;
+= image_tag 'loader.gif', id: 'loader', style: 'display:none;'
+= link_to 'info', '#', id: 'services-help', class: 'btn btn-primary', style: 'float: right'
+%br
+#jsoneditor{ style: 'padding-top: 10px;' }
+:javascript
+  // create the editor
+  var container = document.getElementById("jsoneditor");
+  var options = {
+      mode: "editor"
+  };
+  var json =
+      #{
+        @json_dump.to_json
+      }
+  var editor = new jsoneditor.JSONEditor(container, options, json);
+
+  function onExport() {
+    $('#dump').val(JSON.stringify(editor.get()));
+  }
+
+%div{ id: 'services_info', style: 'visibility:hidden;' }
+  %ul
+    %li <b>просроченные</b> сервисы <b>удаляются</b> при запросе сервисов. Т.е. про добавлении просроченого сервера он автоматически будет удален при сохранении.
+    %li operation_id и error являются внутренними данными сервисов и не редактируются
+

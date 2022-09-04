@@ -1,0 +1,44 @@
+{
+    "schema_id": "tasks",
+    "examine": {
+        "action_text": "tasks.examine.action_text"
+    },
+    "investigate": {
+        "action_text": "tasks.investigate.action_text"
+    },
+    "analyze": {
+        "action_text": "tasks.analyze.action_text",
+        "analyzed_action_text": "tasks.analyzed.action_text",
+        "target_text": "tasks.analyzed.target_text"
+    },
+    "talk": {
+        "action_text": "tasks.talk.action_text"
+    },
+    "arrest": {
+        "action_text": "tasks.arrest.action_text",
+        "target_text": "tasks.arrest.target_text",
+        "tablet_img": "images/some_man.png"
+    },
+    "start_next_chapter": {
+        "default_cost": 2,
+        "default_img": "images/next_chapter.png",
+        "action_text": "tasks.start_next_chapter.action_text",
+        "target_text": "tasks.start_next_chapter.target_text"
+    },
+    "unlock_new_case": {
+        "default_cost": 2,
+        "default_img": "images/next_case.png",
+        "action_text": "tasks.unlock_new_case.action_text",
+        "target_text": "tasks.unlock_new_case.target_text"
+    },
+    "buy_item": {
+    },
+    "buy_booster": {
+    },
+    "earn_stars": {
+        "default_img": "images/star.png",
+        "action_text": "tasks.earn_stars.action_text",
+        "target_text": "tasks.earn_stars.target_text",
+        "tablet_img": "images/icon_medal_gold.png"
+    }
+}

@@ -1,0 +1,7 @@
+---
+  poolSize: 50
+  host:
+    - "127.0.0.1:11211"
+  liveTime: 120   # время жизни кэша
+  prefix: "detective_1dqwes" # ключ
+  disabled: false

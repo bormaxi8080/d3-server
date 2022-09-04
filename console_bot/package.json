@@ -1,0 +1,20 @@
+{
+  "name": "deteclive-client",
+  "version": "0.0.1",
+  "description": "Console client for SQware server",
+  "keywords": [],
+  "author": [
+    "Anton Sidelnikov <ndmeredian@gmail.com>"
+  ],
+  "dependencies": {
+    "fibers": "*",
+    "underscore": "*",
+    "mkdirp": "*",
+    "commander": "*",
+    "cli-table": "^0.3.0"
+  },
+  "scripts": {},
+  "engines": {
+    "node": "0.10"
+  }
+}

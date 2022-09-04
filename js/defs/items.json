@@ -1,0 +1,29 @@
+{
+    "schema_id": "items",
+    "item_types": {
+        "item_1": {
+            "name": "items.item_1.name",
+            "description": "items.item_1.description",
+            "img": "images/icon_coffee_cup_01",
+            "energy": 20
+        },
+        "item_2": {
+            "name": "items.item_2.name",
+            "description": "items.item_2.description",
+            "img": "images/icon_coffee_cup_02",
+            "energy": 50
+        },
+        "item_3": {
+            "name": "items.item_3.name",
+            "description": "items.item_3.description",
+            "img": "images/icon_coffee_cup_03",
+            "energy": 120
+        },
+        "item_4": {
+            "name": "items.item_4.name",
+            "description": "items.item_4.description",
+            "img": "images/icon_coffee_cup_04",
+            "energy": 250
+        }
+    }
+}

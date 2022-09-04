@@ -1,0 +1,16 @@
+.row
+  .span12
+    .top_menu
+      .row
+        .span8
+          = form_tag game_change_user_path, :method => :get, :class => 'form-inline' do
+            = 'find by'
+            = select_tag(:find_by, options_for_select(['social_id', 'hybrid_id']))
+            = text_field_tag :user_id, (current_core_user.nil?) ? "" : current_core_user['social_id']
+            = submit_tag "переключить", :class => 'btn btn-primary'
+        .span4
+          - unless current_core_user.nil?
+            = form_tag reset_state_path, :method => :delete, :class => 'form-inline', :id => "drop-dump" do
+              = submit_tag "сбросить состояние", :class => "btn btn-danger"
+              = check_box_tag("drop_friends", "yes", false, :style => "margin-left: 7px; margin-top: -1px")
+              = "сбросить друзей"

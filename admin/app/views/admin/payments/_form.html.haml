@@ -1,0 +1,8 @@
+= form_tag payments_find_path, class: 'form-horizontal', id: 'reports-form' do
+  .control-group
+    = label_tag :code, 'Payment code:', class: 'control-label'
+    .controls
+      = text_field_tag :payment_code, @payment_code, class: 'span4'
+  .control-group
+    .controls
+      = submit_tag 'Find', class: 'btn btn-primary', id: 'reports-start'

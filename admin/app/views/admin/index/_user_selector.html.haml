@@ -1,0 +1,7 @@
+.user-selector.pull-right
+  = form_tag game_change_user_path, :method => :get, :class => 'form-inline' do
+    = 'Найти игрока'
+    = select_tag :network_code, options_for_select(['Hybrid', 'GC', 'LC', 'FB'])
+    = text_field_tag :social_id, (current_core_user.nil?) ? '' : current_core_user['social_id'], placeholder: 'ID игрока'
+    = submit_tag 'switch', :class => 'btn btn-primary'
+.clearfix

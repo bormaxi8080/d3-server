@@ -1,0 +1,49 @@
+{
+    "schema_id": "map",
+    "case_order": [
+        "case_01",
+        "case_02",
+        "case_03",
+        "case_04",
+        "case_05",
+        "case_06"
+    ],
+    "descriptions": {
+        "case_01": {
+            "img": "images/chapter_11",
+            "path": "Data/cases/case_01/",
+            "name": "map.descriptions.case_01.name",
+            "desc": "map.descriptions.case_01.desc"
+        },
+        "case_02": {
+            "img": "images/chapter_21",
+            "path": "Data/cases/case_02/",
+            "name": "map.descriptions.case_02.name",
+            "desc": "map.descriptions.case_02.desc"
+        },
+        "case_03": {
+            "img": "images/chapter_31",
+            "path": "Data/cases/case_03/",
+            "name": "map.descriptions.case_03.name",
+            "desc": "map.descriptions.case_03.desc"
+        },
+        "case_04": {
+            "img": "images/chapter_41",
+            "path": "Data/cases/case_04/",
+            "name": "map.descriptions.case_04.name",
+            "desc": "map.descriptions.case_04.desc"
+        },
+        "case_05": {
+            "img": "images/chapter_51",
+            "path": "Data/cases/case_05/",
+            "name": "map.descriptions.case_05.name",
+            "desc": "map.descriptions.case_05.desc"
+        },
+        "case_06": {
+            "img": "images/chapter_61",
+            "path": "Data/cases/case_06/",
+            "name": "map.descriptions.case_06.name",
+            "desc": "map.descriptions.case_06.desc"
+        }
+    }
+}

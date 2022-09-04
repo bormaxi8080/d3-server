@@ -1,0 +1,18 @@
+{
+    "schema_id": "case_settings",
+    "stars_per_scene": 5,
+    "default_minigame_cost": 1,
+    "default_suspect_talk_cost": 1,
+    "default_suspect_arrest_cost": 1,
+    "chapter_reward": {
+        "progress": {
+            "xp": 50,
+            "game_balance": 100
+        },
+        "end": {
+            "xp": 200,
+            "game_balance": 1500
+        }
+    }
+}
+

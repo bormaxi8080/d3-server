@@ -1,0 +1,9 @@
+{
+    "schema_id": "energy_settings",
+    "max_energy": 110,
+    "energy_restore_time": 180,
+    "scene_cost": 20,
+    "full_scene_cost": 5,
+    "minigame_fade_time": 6,
+    "minigame_start_energy": 9
+}

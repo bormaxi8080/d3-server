@@ -1,0 +1,4 @@
+{
+    "schema_id": "cash_settings",
+    "analyze_speedup_base_cash_per_hour": 12
+}

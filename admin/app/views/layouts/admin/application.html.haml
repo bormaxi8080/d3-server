@@ -1,0 +1,39 @@
+!!! 5
+%html
+%head
+  %title Admin
+  = stylesheet_link_tag "admin/application"
+  = javascript_include_tag "admin/application"
+  = csrf_meta_tag
+%body
+  .container
+    .row
+      .span5
+        %h2 Manage Detective
+      .span7
+        = render "admin/index/userbar"
+        = render "admin/index/user_selector"
+    .row
+      .span12
+        = render "admin/index/admin_menu"
+    .row
+      .span12
+        - if flash[:notice]
+          .alert.alert-success
+            = flash[:notice]
+        - if flash[:alert]
+          .alert.alert-error
+            = flash[:alert]
+    .row.page-content
+      .span12
+        = yield
+  :javascript
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-49450017-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();

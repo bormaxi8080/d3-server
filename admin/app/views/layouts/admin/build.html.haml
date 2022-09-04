@@ -1,0 +1,10 @@
+!!! 5
+%html
+  %head
+  %title Admin
+  = stylesheet_link_tag "admin/application"
+  = javascript_include_tag "admin/application"
+  = csrf_meta_tag
+  %body
+    .container
+      = yield

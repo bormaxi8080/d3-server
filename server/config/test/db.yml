@@ -1,0 +1,44 @@
+---
+  db:
+    common:   # основные настройки
+      username: "postgres"
+      password: ""
+      params:
+        dialect: "postgres"
+        host: "127.0.0.1"
+        port: "5432"
+        pool:
+          maxConnections: 10  # размера пула
+          maxIdleTime: 30000  # время жизни соединения
+  shards:
+    shard_0:
+      db: "detective_development_node_0"
+      db_cfg: "common"
+    shard_1:
+      db: "detective_development_node_1"
+      db_cfg: "common"
+  mapping:
+    user:
+      highscores:
+        object: true
+        data: "highscores"
+        unmap: false
+        extract_only: true
+      level:
+        unmap: false
+        data: "player.level"
+        extract_only: true
+      hints:
+        unmap: false
+        data: "player.hints"
+        extract_only: true
+      last_day_start:
+        unmap: false
+        data: "options.last_day_start"
+        extract_only: true
+    world:
+  lock_timeout: 60000
+  flushing_props: []
+  logging: true # логировать запросы
+  max_changes: 2000 # максимальное количество ченж логов
+  no_changelogs: false # сохранение ченжлогов

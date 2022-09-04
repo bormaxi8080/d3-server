@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "boosters",
+    "type": "object",
+    "required": [ "booster_types" ],
+    "additionalProperties": false,
+    "properties": {
+        "schema_id": { "type": "string", "enum": [ "boosters" ] },
+        "booster_types": {
+            "type": "object",
+            "required": [ "quick_lookup", "full_hints", "full_multipliers" ],
+            "additionalProperties": false,
+            "properties": {
+                "quick_lookup": {
+                    "type": "object",
+                    "required": [ "price" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "price": {"type": "integer"}
+                    }
+                },
+                "full_hints": {
+                    "type": "object",
+                    "required": [ "price" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "price": {"type": "integer"}
+                    }
+                },
+                "full_multipliers": {
+                    "type": "object",
+                    "required": [ "price" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "price": {"type": "integer"}
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

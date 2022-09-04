@@ -1,0 +1,533 @@
+{
+    "schema_id": "case",
+    "name": "cases.case_01.name",
+    "description": "cases.case_01.description",
+    "scene_order": ["scene_1", "scene_2", "bonus_1"],
+    "scenes": {
+        "scene_1": {
+            "scores": [30000,50000,70000,90000,110000],
+            "name": "cases.case_01.scenes.scene_1.name",
+            "target_text": "cases.case_01.scenes.scene_1.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "house",
+            "img": "house/thumb",
+            "items": {
+                "body": {
+                    "name": "cases.case_01.scenes.scene_1.items.body.name",
+                    "img": "images/dead_pic",
+                    "layer": "victim_special_fade"
+                },
+                "knife": {
+                    "name": "cases.case_01.scenes.scene_1.items.knife.name",
+                    "img": "images/knife",
+                    "layer": "knife_normal_special",
+                    "linked_layer": "32"
+                },
+                "ritual_knife":{
+                    "name": "cases.case_01.scenes.scene_1.items.ritual_knife.name",
+                    "img": "images/ritual_knife",
+                    "layer": "knife_special"
+                },
+                "ritual": {
+                    "name": "cases.case_01.scenes.scene_1.items.ritual.name",
+                    "img": "images/ritual_symbol",
+                    "layer": "symbol_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["body", "ritual", "ritual_knife"],
+                    "on_complete": [
+                        {"progress_tutorial": null},
+                        {"show_movie": "m2"},
+                        {"set_info_state": {"type": "victim", "state": "found"}},
+                        {"add_lab_item": "body"},
+                        {"add_forensic_item": "ritual_knife"},
+                        {"add_forensic_item": "ritual_symbol"},
+                        {"update_killer_state": {
+                            "clues": ["ritual"],
+                            "text": "cases.case_01.add_clues.ritual"
+                        }},
+                        {"progress_tutorial": null}
+                    ]
+                },
+                "2": {
+                    "items": ["knife"],
+                    "on_complete": [
+                        {"progress_tutorial": null},
+                        {"add_forensic_item": "knife"},
+                        {"show_movie": "m4"},
+                        {"progress_tutorial": null}
+                    ]
+                }
+            }
+        },
+        "scene_2": {
+            "scores": [200000,400000,600000,900000,1200000],
+            "name": "cases.case_01.scenes.scene_2.name",
+            "target_text": "cases.case_01.scenes.scene_2.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "footballfan_room_03_Final",
+            "img": "footballfan_room_03_Final/thumb",
+            "items": {
+                "note": {
+                    "name": "cases.case_01.scenes.scene_2.items.note.name",
+                    "img": "images/torn_note",
+                    "layer": "zapiska_special"
+                },
+                "smartphone": {
+                    "name": "cases.case_01.scenes.scene_2.items.smartphone.name",
+                    "img": "images/smartphone",
+                    "layer": "smartphone_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["note", "smartphone"],
+                    "on_complete": [
+                        {"show_movie": "m10"},
+                        {"add_forensic_item": "note"},
+                        {"add_lab_item": "smartphone"},
+                        {"progress_chapter": "201_end_scene_2_state_1"},
+                        {"progress_tutorial": null}
+                    ]
+                }
+            }
+        },
+        "bonus_1": {
+            "scores": [50000,100000,400000,700000,1000000],
+            "name": "cases.case_01.scenes.bonus_1.name",
+            "unlock_text": "sceneLockText",
+            "type": "puzzle",
+            "path": "images/house_puzzle",
+            "img": "images/1_puzzle",
+            "states": {
+                "default": {}
+            }
+        }
+    },
+    "forensic_items": {
+        "ritual_symbol": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/ritual_symbol",
+                    "movie": "m_ritual_symbol"
+                }
+            }
+        },
+        "ritual_knife": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/ritual_knife",
+                    "movie": "m_ritual_knife"
+                }
+            }
+        },
+        "body": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/victim_photo",
+                    "wrapped": false,
+                    "movie": "m_body"
+                }
+            }
+        },
+        "knife": {
+            "initial_state": "new",
+            "target_text": "cases.case_01.forensic_items.knife.target_text",
+            "states": {
+                "new": {
+                    "img": "images/skin_mg_icon",
+                    "minigame": {
+                        "data": {
+                            "type": "puzzle",
+                            "path": "images/mg_skin_puzzle",
+                            "back": "images/_back_minigames",
+                            "completeText": "cases.case_01.forensic_items.knife.states.new.minigame.complete",
+                            "linkInfo": "01:03;02:03;03:01,02"
+                        },
+                        "cost": 1,
+                        "img_result": "images/skin_mg_icon",
+                        "title": "cases.case_01.forensic_items.knife.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [
+                            {"progress_tutorial": null},
+                            {"show_movie": "m5"},
+                            {"set_info_state": {"type": "weapon", "state": "analyzed"} },
+                            {"add_forensic_item": "leather_piece"},
+                            {"update_killer_state": {
+                                "clues": ["gloves"],
+                                "text": "cases.case_01.add_clues.gloves"
+                            }},
+                            {"add_custom_task": "mother_dialog"},
+                            {"progress_chapter": "102_explored_forensic_item_knife"},
+                            {"progress_tutorial": null}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/knife",
+                    "movie": "m_knife"
+                }
+            }
+        },
+        "leather_piece": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/skin_mg_icon",
+                    "movie": "m_leather_piece"
+                }
+            }
+        },
+        "note": {
+            "initial_state": "new",
+            "target_text": "cases.case_01.forensic_items.note.target_text",
+            "states": {
+                "new": {
+                    "img": "images/torn_note",
+                    "minigame": {
+                        "data": {
+                            "type": "puzzle",
+                            "back": "images/_back_minigames",
+                            "path": "images/mg_puzzl_note",
+                            "completeText": "cases.case_01.forensic_items.note.states.new.minigame.complete",
+                            "linkInfo": "01:02,04,07;02:01,03,04;03:02,04,05;04:01,02,03,05,06;05:03,04,06;06:05,07,08;07:01,04,06,08;08:06,07"
+                        },
+                        "title": "cases.case_01.forensic_items.note.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/note",
+                        "on_complete": [
+                            {"show_movie": "m11"},
+                            {"add_lab_item": "note"},
+                            {"progress_chapter": "202_explored_forensic_item_note"},
+                            {"progress_tutorial": null}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/note",
+                    "movie": "m_torn_note"
+                }
+            }
+        },
+        "note_done": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/note",
+                    "movie": "m_note"
+                }
+            }
+        },
+        "smartphone": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/smartphone",
+                    "movie": "m_smartphone"
+                }
+            }
+        },
+        "credit_card": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/credit_card",
+                    "movie": "m_credit_card"
+                }
+            }
+        }
+    },
+    "lab_items": {
+        "body": {
+            "name": "cases.case_01.lab_items.body.name",
+            "target_text": "cases.case_01.lab_items.body.target_text",
+            "img": "images/dead_pic",
+            "item_type": "medicals",
+            "analyze_time": 20,
+            "analyze_movie": "m3",
+            "on_analyze": [
+                {"progress_tutorial": null},
+                {"set_info_state": {"type": "victim", "state": "analyzed"} },
+                {"update_killer_state": {
+                    "clues": ["left_handed"],
+                    "text": "cases.case_01.add_clues.left_handed"
+                }},
+                {"set_scene_state": {"scene": "scene_1", "state": "2"} },
+                {"add_forensic_item": "body"},
+                {"progress_chapter": "101_explored_lab_item_body"},
+                {"progress_tutorial": null}
+            ]
+        },
+        "note": {
+            "name": "cases.case_01.lab_items.note.name",
+            "target_text": "cases.case_01.lab_items.note.target_text",
+            "img": "images/note",
+            "item_type": "medicals",
+            "analyze_time": 300,
+            "analyze_movie": "m12",
+            "on_analyze": [
+                {"check_transition": "accuse_player"},
+                {"progress_chapter": "203_explored_lab_item_note"},
+                {"progress_tutorial": null},
+                {"add_forensic_item": "note_done"}
+            ]
+        },
+        "smartphone": {
+            "name": "cases.case_01.lab_items.smartphone.name",
+            "target_text": "cases.case_01.lab_items.smartphone.target_text",
+            "img": "images/smartphone",
+            "item_type": "technics",
+            "analyze_time": 300,
+            "analyze_movie": "m13",
+            "on_analyze": [
+                {"add_forensic_item": "smartphone"},
+                {"check_transition": "accuse_player"},
+                {"update_suspect_state": {
+                    "suspect": "player",
+                    "alibi": false,
+                    "text": "cases.case_01.add_alibi.player"
+                }},
+                {"progress_chapter": "204_explored_lab_item_smartphone"},
+                {"progress_tutorial": null}
+            ]
+        },
+        "credit_card": {
+            "name": "cases.case_01.lab_items.credit_card.name",
+            "target_text": "cases.case_01.lab_items.credit_card.target_text",
+            "img": "images/credit_card",
+            "item_type": "hack",
+            "analyze_time": 15,
+            "analyze_movie": "m7",
+            "on_analyze": [
+                {"progress_tutorial": null},
+                {"add_forensic_item": "credit_card"},
+                {"update_suspect_state": {
+                    "suspect": "player",
+                    "clues": ["ritual"],
+                    "text": "cases.case_01.add_suspect_clues.player.ritual"
+                }},
+                {"init_arrest_state": null},
+                {"progress_chapter": "105_explored_lab_item_credit_card"},
+                {"progress_tutorial": null}
+            ]
+        }
+    },
+    "clues": {
+        "left_handed": {
+            "img": "images/lefty"
+        },
+        "gloves": {
+            "img": "images/gloves"
+        },
+        "ritual": {
+            "img": "images/ritual_symbol"
+        }
+    },
+    "suspect_properties": {
+        "prop_1": "age",
+        "prop_2": "weight"
+    },
+    "suspects": {
+        "player": {
+            "clues": {
+                "left_handed": {
+                    "img": "images/lefty",
+                    "match": true
+                },
+                "ritual": {
+                    "img": "images/ritual_symbol",
+                    "match": true
+                },
+                "gloves": {
+                    "img": "images/gloves",
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_football",
+                    "portrait": "images/football_portrait",
+                    "title": "cases.case_01.suspects.player.states.default.title",
+                    "status": "cases.case_01.suspects.player.states.default.status",
+                    "prop_1": "cases.case_01.suspects.player.states.default.prop_1",
+                    "prop_2": "cases.case_01.suspects.player.states.default.prop_2",
+                    "target_text": "cases.case_01.suspects.player.states.default.target_text"
+                },
+                "dialog_1": {
+                    "talk_movie": "m14",
+                    "on_talk": [
+                        {"progress_tutorial": null},
+                        {"update_suspect_state": {
+                            "suspect": "player",
+                            "motive": true,
+                            "text": "cases.case_01.add_motive.player"
+                        }},
+                        {"show_movie": "m15"},
+                        {"set_suspect_state": {"suspect": "player", "state": "default"}},
+                        {"progress_chapter": "205_suspect_player_dialog_1"},
+                        {"add_unlock_new_case_task": {"case": "case_02", "cost": 0, "triggers": [{"progress_tutorial": null}]}},
+                        {"progress_tutorial": null}
+                    ]
+                }
+            }
+        },
+        "musician": {
+            "clues": {
+                "ritual": {
+                    "img": "images/ritual_symbol",
+                    "match": true
+                },
+                "gloves": {
+                    "img": "images/gloves",
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_musician",
+                    "portrait": "images/musician_portrait",
+                    "title": "cases.case_01.suspects.musician.states.default.title",
+                    "status": "cases.case_01.suspects.musician.states.default.status",
+                    "prop_1": "cases.case_01.suspects.musician.states.default.prop_1",
+                    "prop_2": "cases.case_01.suspects.musician.states.default.prop_2",
+                    "target_text": "cases.case_01.suspects.musician.states.default.target_text"
+                },
+                "dialog_1": {
+                    "talk_movie": "m6_1",
+                    "on_talk": [
+                        {"progress_tutorial": null},
+                        {"add_suspect": "player"},
+                        {"update_suspect_state": {
+                            "suspect": "player",
+                            "clues": ["left_handed", "gloves"],
+                            "text": "cases.case_01.add_suspect_clues.player.left_handed.gloves"
+                        }},
+                        {"add_lab_item": "credit_card"},
+                        {"show_movie": "m6_2"},
+                        {"progress_chapter": "104_suspect_musician_dialog_1"},
+                        {"progress_tutorial": null}
+                    ]
+                }
+            }
+        }
+    },
+    "info": {
+        "victim": {
+            "found": {
+                "name": "cases.case_01.info.victim.found.name",
+                "description": "cases.case_01.info.victim.found.description",
+                "img": "images/victim_portrait"
+            },
+            "analyzed": {
+                "name": "cases.case_01.info.victim.analyzed.name",
+                "description": "cases.case_01.info.victim.analyzed.description",
+                "img": "images/victim_portrait"
+            }
+        },
+        "weapon": {
+            "found": {
+                "name": "cases.case_01.info.weapon.found.name",
+                "description": "cases.case_01.info.weapon.found.description",
+                "img": "images/knife"
+            },
+            "analyzed": {
+                "name": "cases.case_01.info.weapon.analyzed.name",
+                "description": "cases.case_01.info.weapon.analyzed.description",
+                "img": "images/knife"
+            }
+        },
+        "killer": {
+            "arrested": {
+                "name": "cases.case_01.info.killer.arrested.name",
+                "description": "cases.case_01.info.killer.arrested.description",
+                "img": "images/football_portrait"
+            }
+        }
+    },
+    "chapters": [{
+        "size": 6,
+        "img": "images/chapter_11",
+        "name": "cases.case_01.chapters.1.name",
+        "description": "cases.case_01.chapters.1.description",
+        "on_start": []
+    }, {
+        "size": 5,
+        "img": "images/chapter_12",
+        "name": "cases.case_01.chapters.2.name",
+        "description": "cases.case_01.chapters.2.description",
+        "description_end": "cases.case_01.chapters.2.description_end",
+        "on_start": [
+            {"progress_tutorial": null},
+            {"show_movie": "m9"},
+            {"open_new_scene": "scene_2"},
+            {"set_scene_state": {"scene": "scene_2", "state": "1"} },
+            {"progress_tutorial": null}
+        ]
+    }],
+    "on_start": [
+        {"progress_tutorial": null},
+        {"show_movie": "m1"},
+        {"show_movie": "m1_1"},
+        {"open_new_scene": "scene_1"},
+        {"set_scene_state": {"scene": "scene_1", "state": "1"} },
+        {"progress_tutorial": null}
+    ],
+    "arrest": {
+        "killer": "player",
+        "cost": 1,
+        "on_success": [
+            {"progress_tutorial": null},
+            {"show_movie": "m8"},
+            {"progress_chapter": "106_arrest_suspect_player" },
+            {"set_info_state": {"type": "killer", "state": "arrested"} },
+            {"open_new_scene": "bonus_1"},
+            {"add_start_next_chapter_task": {"cost": 2 } },
+            {"progress_tutorial": null},
+            {"progress_tutorial": null}
+        ],
+        "on_fail": [
+            {"show_movie": "m_wrong_arrest"}
+        ]
+    },
+    "transitions": {
+        "accuse_player": {
+            "preconditions": [
+                {"lab_item_state": {"note": "done"} },
+                {"lab_item_state": {"smartphone": "done"} }
+            ],
+            "on_complete": [
+                {"set_suspect_state": {"suspect": "player", "state": "dialog_1"} }
+            ]
+        }
+    },
+    "custom_tasks": {
+        "mother_dialog":  {
+            "cost": 1,
+            "img": "images/mother_portrait",
+            "action_text": "cases.case_01.custom_tasks.mother.action_text",
+            "target_text": "cases.case_01.custom_tasks.mother.target_text",
+            "on_click": [
+                {"progress_tutorial": null},
+                {"show_movie": "m6"},
+                {"add_suspect": "musician"},
+                {"update_suspect_state": {
+                    "suspect": "musician",
+                    "clues": ["ritual", "gloves"],
+                    "text": "cases.case_01.add_suspect_clues.musician.ritual.gloves"
+                }},
+                {"set_suspect_state": {"suspect": "musician", "state": "dialog_1"} },
+                {"progress_chapter": "103_custom_task_mother_talk"},
+                {"progress_tutorial": null}
+            ]
+        }
+    }
+}

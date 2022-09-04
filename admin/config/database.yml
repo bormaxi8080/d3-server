@@ -1,0 +1,62 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+development_proxy: &proxy
+  adapter:  vertica
+  username: direct_dragonsworld
+  password: YnpgBmkWwtHoMyUHNfrWN
+  database: stats2
+  host:     db01.linkfeed.ru
+  port:     5433
+  pool:     5
+
+prod: &prod
+  <<: *proxy
+  username: direct_dragonlands
+  password: jRhFZZFoPhBbMqrCvNYpY
+
+alpha75:
+  <<: *proxy
+
+alpha_rc:
+  <<: *proxy
+
+alpha_0:
+  <<: *proxy
+
+alpha_1:
+  <<: *proxy
+
+alpha_2:
+  <<: *prod
+
+alpha_3:
+  <<: *proxy
+
+sqware_dev:
+  <<: *proxy
+
+alpha:
+  <<: *proxy
+
+web_alpha:
+  <<: *proxy
+
+fight_alpha:
+  <<: *proxy
+
+beta2:
+  <<: *prod
+
+beta3:
+  <<: *prod
+
+int_prod:
+  <<: *proxy
+  username: direct_dragonsworld
+  password: YnpgBmkWwtHoMyUHNfrWN
+
+test:
+  adapter: sqlite3
+  database: db/development.sqlite3

@@ -1,0 +1,632 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "base",
+    "definitions": {
+        "empty": {},
+
+        "name": {
+            "type": "string",
+            "title": "Название",
+            "localized": true
+        },
+        "description": {
+            "type": "string",
+            "title": "Описание",
+            "localized": true
+        },
+
+        "admin_data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "editor_view_state": {
+                    "$ref": "#/definitions/vsid"
+                }
+            }
+        },
+
+        "type_id": {
+            "type": "string",
+            "pattern": "^\\w+$"
+        },
+
+        "resource_id": {
+            "type": "string",
+            "ref_def_id": "resources"
+        },
+        "map_item_id": {
+            "type": "string",
+            "ref_def_id": "map_items"
+        },
+        "quest_id": {
+            "type": "string",
+            "ref_def_id": "quests"
+        },
+        "questline_id": {
+            "type": "string",
+            "ref_def_id": "questlines"
+        },
+
+        "vsid": {
+            "type": "integer",
+            "minimum": 0,
+            "ref_def": "view_states"
+        },
+
+        "cost": {
+            "type": "object",
+            "expand": true,
+            "additionalProperties": false,
+            "properties": {
+                "game_balance": {
+                    "title": "Золото",
+                    "type": "integer"
+                },
+                "real_balance": {
+                    "title": "Реал",
+                    "type": "integer"
+                },
+                "respect": {
+                    "title": "Репутация",
+                    "type": "integer"
+                },
+                "resources": {
+                    "title": "Ресурсы",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                }
+            }
+        },
+
+        "effect_type": {
+            "type": "string",
+            "title": "Тип эффекта",
+            "enum": [
+                "water",
+                "drop_bonus",
+                "beastie",
+                "stone",
+                "road",
+                "forest",
+                "nutrition"
+            ]
+        },
+
+        "shop_data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "main_group": {
+                    "type": "string",
+                    "enum": [
+                        "special",
+                        "nature",
+                        "decor",
+                        "clothes",
+                        "buildings",
+                        "consumables"
+                    ]
+                },
+                "sub_group": {
+                    "type": "string",
+                    "enum": [
+                        "bundles",
+                        "crafting",
+                        "resources",
+                        "royal",
+                        "royal_builds",
+                        "houses",
+                        "special",
+                        "town",
+                        "roads",
+                        "walls",
+                        "nature",
+                        "farms",
+                        "animals",
+                        "water",
+                        "plants",
+                        "misc",
+                        "shirts",
+                        "pants",
+                        "hats",
+                        "energy",
+                        "all",
+                        "buffs",
+                        "summon",
+                        "showall"
+                    ]
+                },
+                "image": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "level_access": {
+                    "type": "integer"
+                },
+                "allies_access": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "title": "Кол-во союзников"
+                },
+                "sort_weight": {
+                    "type": "number"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "promo": {
+                    "type": "string",
+                    "pattern": "^\\w+$",
+                    "title": "Связанная акция"
+                },
+                "quest_access": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/type_id"
+                    }
+                },
+                "map_items_access": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "info": {
+                    "type": "object",
+                    "properties": {
+                        "castle": {
+                            "type": "integer",
+                            "title": "очки замка"
+                        },
+                        "grow_time": {
+                            "type": "integer",
+                            "title": "время ожидания дохода"
+                        },
+                        "payout": {
+                            "type": "integer",
+                            "title": "доход в монетах"
+                        },
+                        "energy": {
+                            "type": "integer",
+                            "title": "энергия"
+                        },
+                        "reward": {
+                            "type": "string",
+                            "title": "производимый ресурс"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "title": "опыт"
+                        },
+                        "unlock_cost": {
+                            "$ref": "#/definitions/cost"
+                        }
+                    }
+                }
+            }
+        },
+
+        "inventory_group": {
+            "title": "Группа инвентаря",
+            "type": "string",
+            "enum": [
+                "materials",
+                "buildings",
+                "nature",
+                "decor",
+                "consumables",
+                "storage",
+                "building"
+            ]
+        },
+
+        "object_type": {
+            "type": "string",
+            "enum": [
+                "map_object",
+                "crop",
+                "buff",
+                "potion",
+                "active_object",
+                "cloth"
+            ]
+        },
+        "animations": {
+            "type": "string",
+            "title": "Анимация",
+            "enum": [
+                "eat",
+                "walk",
+                "stand",
+                "go_front",
+                "idle",
+                "attack",
+                "chop",
+                "fall",
+                "fun",
+                "fun2",
+                "fun3",
+                "happy",
+                "angry",
+                "hit",
+                "die",
+                "appear",
+                "disappear"
+            ]
+        },
+        "craft_info": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "hidden": {
+                    "type": "boolean",
+                    "title": "не показывать (для акций)"
+                },
+                "duration": {
+                    "type": "integer",
+                    "title": "длительность производства (ms)"
+                },
+                "level": {
+                    "type": "integer",
+                    "title": "min уровень",
+                    "minimum": 1
+                },
+                "speedup_ratio": {
+                    "type": "integer",
+                    "title": "стоимость ускорения"
+                },
+                "species": {
+                    "type": "string",
+                    "title": "id вкладки в окне"
+                },
+                "crafted_in": {
+                    "type": "string",
+                    "pattern": "^\\w+$"
+                },
+                "from": {
+                    "$ref": "#/definitions/cost"
+                },
+                "requirements": {
+                    "type": "array",
+                    "title": "требования",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "quest_access": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/type_id"
+                    }
+                }
+            }
+        },
+        "activity_info": {
+            "type": "object",
+            "required": [
+                "params"
+            ],
+            "properties": {
+                "params": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/effects"
+                        },
+                        {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "duration": {
+                                    "type": "integer"
+                                },
+                                "proxy": {
+                                    "type": "boolean"
+                                },
+                                "avatar_action": {
+                                    "type": "string"
+                                },
+                                "filter": {
+                                    "type": "string",
+                                    "enum": [
+                                        "check_is_tree",
+                                        "check_is_withered_crop",
+                                        "check_click_action",
+                                        "check_effect",
+                                        "check_tag",
+                                        "check_is_pond"
+                                    ]
+                                },
+                                "filter_param": {
+                                    "type": "string",
+                                    "enum": [
+                                        "",
+                                        "water",
+                                        "beastie",
+                                        "spider_beastie",
+                                        "base_beastie",
+                                        "speed_crop",
+                                        "speed_craft",
+                                        "speed_craft",
+                                        "speed_pet",
+                                        "produce",
+                                        "clear"
+                                    ]
+                                },
+                                "target_command": {
+                                    "type": "string",
+                                    "enum": [
+                                        "to_last_state",
+                                        "expires_date_devisor",
+                                        "to_state_with_label",
+                                        "to_previous_state",
+                                        "get_guaranted_drop",
+                                        "expires_date_subtraction",
+                                        "kill_for_one_hit",
+                                        "click_some_hits"
+                                    ]
+                                },
+                                "command_param": {
+                                    "type": "string"
+                                },
+                                "effects": {
+                                    "$ref": "#/definitions/effects"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "effects": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "expand": true,
+                "minProperties": 1,
+                "properties": {
+                    "ignore_helper": {
+                        "type": "boolean"
+                    },
+                    "whitelist_rooms": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "blacklist_rooms": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "notify_planb_offer": {
+                        "title": "Завершение оффера Plan B",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "disappear": {
+                        "type": "string"
+                    },
+                    "start_scenario": {
+                        "type": "string",
+                        "title": "Старт сценария"
+                    },
+                    "start_walking": {
+                        "type": "string"
+                    },
+                    "show_window": {
+                        "$ref": "#/definitions/show_window"
+                    },
+                    "drop": {
+                        "$ref": "#/definitions/drop"
+                    },
+                    "spawn_item": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "roll": {
+                                "type": "integer"
+                            },
+                            "ranges": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "min": {
+                                            "type": "integer"
+                                        },
+                                        "max": {
+                                            "type": "integer"
+                                        },
+                                        "type_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "respawn": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "random_position": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "move_camera": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "x": {
+                                "type": "integer"
+                            },
+                            "y": {
+                                "type": "integer"
+                            },
+                            "grid_x": {
+                                "type": "integer"
+                            },
+                            "grid_y": {
+                                "type": "integer"
+                            },
+                            "duration": {
+                                "type": "number"
+                            },
+                            "delay": {
+                                "type": "number"
+                            },
+                            "type_id": {
+                                "type": "string"
+                            },
+                            "item_id": {
+                                "type": "integer"
+                            },
+                            "speed": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "settle": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "npc_id"
+                        ],
+                        "properties": {
+                            "npc_id": {
+                                "$ref": "#/definitions/type_id"
+                            },
+                            "house_id": {
+                                "$ref": "#/definitions/type_id"
+                            }
+                        }
+                    },
+                    "replace": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "type": {
+                                "$ref": "#/definitions/type_id"
+                            },
+                            "target_type": {
+                                "$ref": "#/definitions/type_id"
+                            },
+                            "state_id": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "give_access": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "drop": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "roll",
+                "ranges"
+            ],
+            "properties": {
+                "roll": {
+                    "type": "integer"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "show_in_window": {
+                    "type": "boolean"
+                },
+                "ranges": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "min",
+                            "max",
+                            "reward"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "min": {
+                                "type": "integer"
+                            },
+                            "max": {
+                                "type": "integer"
+                            },
+                            "reward": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "min_amount",
+                                    "type_id"
+                                ],
+                                "properties": {
+                                    "min_amount": {
+                                        "type": "integer"
+                                    },
+                                    "max_amount": {
+                                        "type": "integer"
+                                    },
+                                    "type_id": {
+                                        "$ref": "#/definitions/resource_id"
+                                    },
+                                    "room_id": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "show_window": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [ "window_name" ],
+                "properties": {
+                    "window_name": {
+                        "type": "string"
+                    },
+                    "window_params": {
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "map_object", "crop", "buff", "cloth", "potion",
+                    "walker", "building", "weed", "plant", "water",
+                    "tile", "animal", "beastie", "royal", "decor",
+                    "stone", "tree", "wall", "weed", "wild", "npc", "resource",
+                    "plot", "royal", "rent_house", "craft_house", "swamp_decor",
+                    "fake_object", "interactive_decor", "active_object",
+                    "ground", "resource_house", "weed_grass", "mushroom",
+                    "dead_tree", "burned_tree", "pond", "flower", "tree_root",
+                    "base_beastie", "spider_beastie", "plant_in_web", "stone_in_web"
+                ]
+            }
+        }
+    }
+}

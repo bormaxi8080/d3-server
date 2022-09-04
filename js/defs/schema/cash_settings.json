@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "cash_settings",
+    "type": "object",
+    "required": [ "analyze_speedup_seconds_per_cash" ],
+    "additionalProperties": false,
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["cash_settings"] },
+        "analyze_speedup_seconds_per_cash": {"type": "integer"}
+    }
+}

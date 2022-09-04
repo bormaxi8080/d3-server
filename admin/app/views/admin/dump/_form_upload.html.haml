@@ -1,0 +1,12 @@
+%h4 Загрузить дамп
+- if @message
+  %div{:style=>'font-size:18px; font-weight: bold; color:blue; margin: 10px 0px 20px 0;'}
+    = @message.html_safe
+
+= form_tag '/dump/upload', :multipart => true do
+  = label_tag :social_id, 'Социальный идентификатор:'
+  = text_field_tag :social_id
+  = label_tag :dump, 'файл дампа:'
+  = file_field_tag :dump
+  %br
+  = submit_tag 'Загрузить дамп', class: 'btn btn-primary'

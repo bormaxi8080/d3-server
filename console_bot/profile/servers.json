@@ -1,0 +1,52 @@
+{
+    "alpha": {
+        "url": "192.168.1.50/detective_alpha",
+        "network_secret": {
+            "GC": "lGj6RhuiI9Z76CrE51hq",
+            "LC": "lGj6RhuiI9Z76CrE51hq",
+            "DEV": "lGj6RhuiI9Z76CrE51hq"
+        },
+        "hybrid_secret": "tebyzenkuycgfzkudrtyuisgh",
+        "backend_secret": "0e616dc02e3b538e077454ff93e4eca6"
+    },
+    "local": {
+        "url": "127.0.0.1:3000",
+        "network_secret": {
+            "GC": "lGj6RhuiI9Z76CrE51hq",
+            "LC": "lGj6RhuiI9Z76CrE51hq",
+            "DEV": "lGj6RhuiI9Z76CrE51hq"
+        },
+        "hybrid_secret": "tebyzenkuycgfzkudrtyuisgh",
+        "backend_secret": "0e616dc02e3b538e077454ff93e4eca6"
+    },
+    "production": {
+        "url": "88.212.226.214/app",
+        "network_secret": {
+            "GC": "64OW4AwkU8cJnWo7TKLH",
+            "LC": "i0U7C8jD9gmGlO5CZls6",
+            "DEV": "WSte1xznfpJEUMx7vitY"
+        },
+        "hybrid_secret": "9Hej6RYoPnSUgKhsZug3FxOPk0OcWo7Tmgq5iDt0",
+        "backend_secret": "aCCKI7Nd3Yk1uneWZgIYFpJHGZCHkSZh1H5f6VhxVCYoyu7niEYDSO2vg3Bm"
+    },
+    "beta": {
+        "url": "109.202.17.170/detective_beta",
+        "network_secret": {
+            "GC": "lGj6RhuiI9Z76CrE51hq",
+            "LC": "lGj6RhuiI9Z76CrE51hq",
+            "DEV": "lGj6RhuiI9Z76CrE51hq"
+        },
+        "hybrid_secret": "tebyzenkuycgfzkudrtyuisgh",
+        "backend_secret": "0e616dc02e3b538e077454ff93e4eca6"
+    },
+    "review": {
+        "url": "109.202.17.170/detective_review",
+        "network_secret": {
+            "GC": "64OW4AwkU8cJnWo7TKLH",
+            "LC": "i0U7C8jD9gmGlO5CZls6",
+            "DEV": "WSte1xznfpJEUMx7vitY"
+        },
+        "hybrid_secret": "9Hej6RYoPnSUgKhsZug3FxOPk0OcWo7Tmgq5iDt0",
+        "backend_secret": "aCCKI7Nd3Yk1uneWZgIYFpJHGZCHkSZh1H5f6VhxVCYoyu7niEYDSO2vg3Bm"
+    }
+}

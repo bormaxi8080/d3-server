@@ -1,0 +1,43 @@
+- if current_core_user
+  = render 'admin/dump/editor_help'
+  .row
+    .span7
+      .buttons.pull-left
+        = link_to 'download', dump_get_path, id: 'get-dump', class: 'btn btn-default'
+        = link_to 'paste', '#', id: 'set-dump', class: 'btn btn-default'
+        = link_to 'save', '#', id: 'save-dump', class: 'btn btn-warning'
+        = link_to 'clone', '#', id: 'clone-dump', class: 'btn btn-warning'
+        = image_tag 'loader.gif', :id => 'loader'
+      = form_tag reset_state_path, :method => :delete, :class => 'form-inline pull-left', :id => 'drop-dump' do
+        = submit_tag 'reset state', :class => 'btn btn-danger'
+        = check_box_tag 'drop_friends', 'yes', false, :style => 'margin-left: 7px; margin-top: -1px'
+        = 'reset friends'
+      .clearfix
+    .span5
+      .pull-right
+        = link_to 'simple mode', dump_edit_path({simple: 1}), class: 'btn btn-default'
+        = link_to 'normal mode', dump_edit_path, class: 'btn btn-default'
+        = link_to 'help', '#', id: 'show-editor-help', class: 'btn btn-success'
+      .clearfix
+  .backup-list.row
+    .span12
+      = render 'backup_list'
+  .row
+    .span12
+      #jsoneditor
+      %br
+      :javascript
+        // create the editor
+        var container = document.getElementById("jsoneditor");
+        var options = {
+            mode: "editor"
+        };
+        var json =
+            #{
+              @json_dump.to_json
+            }
+        var editor = new jsoneditor.JSONEditor(container, options, json);
+- else
+  %strong User not selected
+  %br
+  %small You need to select user before editing dump

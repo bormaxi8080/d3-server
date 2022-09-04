@@ -1,0 +1,12 @@
+- if @backup_list.any?
+  = link_to 'Backup list', '#', id: 'show_backup'
+  %table.table#backup_list{style: 'display:none'}
+    %tr
+      %th Date
+      %th Comment
+      %th Choose
+    - @backup_list.each do |backup|
+      %tr
+        %td=Time.zone.parse(backup['created_at']).strftime('%b %d, %Y %H:%M:%S')
+        %td=backup['comment']
+        %td=link_to 'Restore', '#', class: 'btn btn-warning restore_backup', data: {id: backup['id']}

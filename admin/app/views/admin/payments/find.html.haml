@@ -1,0 +1,28 @@
+= render 'form'
+
+- if @payment
+  %table.table.table-striped
+    %tr
+      %td user social_id
+      %td
+        = @user['social_id']
+        = form_tag game_change_user_path, :method => :get do
+          = hidden_field_tag :network_code, 'Hybrid'
+          = hidden_field_tag :social_id, @user['social_id']
+          = hidden_field_tag :redirect_url, dump_edit_path
+          = submit_tag "view user", :class => 'btn btn-primary'
+    %tr
+      %td id
+      %td= @payment['id']
+    %tr
+      %td created at
+      %td= Time.parse(@payment['createdAt']).to_s
+    %tr
+      %td payment code
+      %td= @payment['payment_code']
+    %tr
+      %td product code
+      %td= @payment['product_code']
+    %tr
+      %td amount
+      %td= @payment['amount']

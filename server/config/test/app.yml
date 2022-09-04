@@ -1,0 +1,36 @@
+---
+  backend_secret: "0e616dc02e3b538e077454ff93e4eca6" # ключ для админки
+  share_url: "http://127.0.0.1:3000/share" # адрес для постинга на стену
+  assets_url: "http://127.0.0.1:3000/cdn/" # адрес для ассетов (в данном случае через cdn)
+  process_url: "http://127.0.0.1:3000/process" # адрес для процессинга
+  cheat: true # разрешить читерить
+  fake_validation: true
+  logger:
+    separate_users: true
+    console_silent: false
+    console_level: "silly"
+    file_silent: true
+    file_level: "debug"
+    file_name: "logs/server.##.log"
+    filter_params: # параметры которые будут отображаться в логе в виде sessoin=Filtered
+      sq_session_id: true
+      auth_key: true
+      sess_id: true
+      gamedata: true
+  networks: #настройки социальных сетей
+    5:
+      name: "hybrid"
+      secret_key: "tebyzenkuycgfzkudrtyuisgh"
+      accounts:
+        DEV:
+          secret: "lGj6RhuiI9Z76CrE51hq"
+        LC:
+          secret: "lGj6RhuiI9Z76CrE51hq"
+        GC:
+          secret: "lGj6RhuiI9Z76CrE51hq"
+        FB:
+          url: "https://graph.facebook.com/me?access_token=<%= key %>"
+        VK:
+          url: "https://api.vk.com/method/getUserSettings?uid=<%= id %>&access_token=<%= key %>"
+      local: "DEV"
+      verify_url: "https://sandbox.itunes.apple.com/verifyReceipt"

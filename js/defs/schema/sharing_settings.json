@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "sharing_settings",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [ "sharing_settings_data" ],
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["sharing_settings"] },
+        "sharing_settings_data": {
+            "title": "виралки",
+            "type": "object",
+            "additionalProperties": {"$ref": "#/definitions/sharing_setting"}
+        }
+    },
+
+    "definitions": {
+        "sharing_setting": {
+            "type": "object",
+            "additionalProperties": false,
+            "expand": true,
+            "properties": {
+                "image": {"type": "string"},
+                "message": {"type": "string", "localized": true},
+                "max_uses": {"type": "integer"},
+                "expire_hours": {"type": "integer"},
+                "permission_hours": {"type": "integer"},
+                "gift_type": {"type": "string"},
+                "count": {"type": "integer"}
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions":{
+        "body":{
+            "type": "object",
+            "required": [ "character", "text" ],
+            "additionalProperties": false,
+            "properties": {
+                "character": {"type": "string"},
+                "text": {
+                    "type": "object",
+                    "required": [ "new", "analyzing", "analyzed", "done" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "new": {"type": "string"},
+                        "analyzing": {"type": "string"},
+                        "analyzed": {"type": "string"},
+                        "done": {"type": "string"}
+                    }
+                }
+            }
+        }
+    },
+    "id": "interface",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [ "img", "suspect", "laboratory" ],
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["interface"] },
+        "img": {
+            "type": "object",
+            "required": [ "alibi", "motive" ],
+            "additionalProperties": false,
+            "properties": {
+                "alibi": {
+                    "type": "object",
+                    "required": [ "true", "false" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "true": {"type": "string"},
+                        "false": {"type": "string"}
+                    }
+                },
+                "motive": {
+                    "type": "object",
+                    "required": [ "true", "false" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "true": {"type": "string"},
+                        "false": {"type": "string"}
+                    }
+                }
+            }
+        },
+        "tablet": {
+            "type": "object",
+            "required" : [ "cost_text" ],
+            "additionalProperties": {"type": "object"},
+            "properties":{
+                "cost_text": {
+                    "type": "object",
+                    "required": [ "lab_analyzed", "lab_speedup", "cost" ],
+                    "additionalProperties": {"type": "object"},
+                    "properties": {
+                        "lab_analyzed": {"type": "string"},
+                        "lab_speedup": {"type": "string"},
+                        "cost": {"type": "string"}
+                    }
+                }
+            }
+        },
+        "suspect": {
+            "type": "object",
+            "required": [ "button_title" ],
+            "additionalProperties": false,
+            "properties": {
+                "button_title": {
+                    "type": "object",
+                    "required": [ "arrest", "repeat", "talk" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "arrest": {"type": "string"},
+                        "repeat": {"type": "string"},
+                        "talk": {"type": "string"}
+                    }
+                },
+                "button_color": {
+                    "type": "object",
+                    "required": [ "talk", "repeat", "arrest" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "talk": {"type": "string", "enum": ["green"]},
+                        "repeat": {"type": "string", "enum": ["blue"]},
+                        "arrest": {"type": "string", "enum": ["red"]}
+                    }
+                },
+                "properties": {
+                    "type": "object",
+                    "required": [ "age", "weight" ],
+                    "additionalProperties": {
+                            "type": "object",
+                            "required": [ "img", "title" ],
+                            "additionalProperties": {"type": "object"},
+                            "properties": {
+                                "title": {"type": "string"},
+                                "img": {"type": "string"}
+                            }
+                        },
+                    "properties": {
+                        "age": {
+                            "type": "object",
+                            "required": [ "img", "title" ],
+                            "additionalProperties": {"type": "object"},
+                            "properties": {
+                                "title": {"type": "string"},
+                                "img": {"type": "string"}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "forensics":{
+            "type": "object",
+            "additionalProperties": {"type": "string"},
+            "properties": {
+                "default_button_title": {"type": "string"}
+            }
+        },
+        "laboratory": {
+            "type": "object",
+            "required": [ "button_title", "button_color", "tip_text", "item_types" ],
+            "additionalProperties": false,
+            "properties": {
+                "button_title": {
+                    "type": "object",
+                    "required": [ "new", "analyzing", "analyzed", "done"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "new": {"type": "string"},
+                        "analyzing": {"type": "string"},
+                        "analyzed": {"type": "string"},
+                        "done": {"type": "string"}
+                    }
+                },
+                "button_color": {
+                    "type": "object",
+                    "required": [ "new", "analyzing", "analyzed", "done" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "new": {"type": "string", "enum": ["green"]},
+                        "analyzing": {"type": "string", "enum": ["blue"]},
+                        "analyzed": {"type": "string", "enum": ["green"]},
+                        "done": {"type": "string", "enum": ["gray"]}
+                    }
+                },
+                "tip_text": {
+                    "type": "object",
+                    "required": [ "done", "analyzed" ],
+                    "additionalProperties": {"type": "string"},
+                    "properties": {
+                        "done": {"type": "string"},
+                        "analyzed": {"type": "string"}
+                    }
+                },
+                "item_types": {
+                    "type": "object",
+                    "required": [ "body", "chemicals", "technics" ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "body": { "$ref": "#/definitions/body" },
+                        "chemicals": { "$ref": "#/definitions/body" },
+                        "technics": { "$ref": "#/definitions/body" }
+                    }
+                }
+            }
+        }
+    }
+}

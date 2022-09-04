@@ -1,0 +1,897 @@
+{
+    "schema_id": "case",
+    "name": "cases.case_02.name",
+    "description": "cases.case_02.description",
+    "scene_order": ["scene_1", "scene_2", "bonus_1", "scene_3", "bonus_2"],
+    "scenes": {
+        "scene_1": {
+            "scores": [350000,700000,1100000,1800000,2200000],
+            "name": "cases.case_02.scenes.scene_1.name",
+            "target_text": "cases.case_02.scenes.scene_1.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "office_backstreet",
+            "img": "office_backstreet/thumb",
+            "items": {
+                "trash": {
+                    "name": "cases.case_02.scenes.scene_1.items.trash.name",
+                    "img": "images/trash",
+                    "layer": "musor_special"
+                },
+                "doorhandle": {
+                    "name": "cases.case_02.scenes.scene_1.items.doorhandle.name",
+                    "img": "images/door_handle",
+                    "layer": "dvernay_rucka_special"
+                },
+                "videocamera": {
+                    "name": "cases.case_02.scenes.scene_1.items.videocamera.name",
+                    "img": "images/camera",
+                    "layer": "kamera_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["videocamera"],
+                    "on_complete": [{
+                        "add_lab_item": "film"
+                    }, {
+                        "show_movie": "m2"
+                    }, {
+                        "progress_chapter": "101_explored_scene_1_state_1"
+                    }]
+                },
+                "2": {
+                    "items": ["doorhandle", "trash"],
+                    "on_complete": [{
+                        "add_forensic_item": "doorhandle"
+                    }, {
+                        "add_forensic_item": "trash"
+                    }, {
+                        "show_movie": "m3_1"
+                    }, {
+                        "progress_chapter": "103_explored_scene_1_state_2"
+                    }]
+                }
+
+            }
+        },
+        "scene_2": {
+            "scores": [400000,700000,1100000,1800000,2200000],
+            "name": "cases.case_02.scenes.scene_2.name",
+            "target_text": "cases.case_02.scenes.scene_2.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "office_of_the_victim4",
+            "img": "office_of_the_victim4/thumb",
+            "items": {
+                "dictophone": {
+                    "name": "cases.case_02.scenes.scene_2.items.dictophone.name",
+                    "img": "images/dect",
+                    "layer": "diktofon"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["dictophone"],
+                    "on_complete": [{
+                        "show_movie": "m9"
+                    }, {
+                        "progress_chapter": "110_explored_scene_2_state_1"
+                    }, {
+                        "check_transition": "end_chapter_1"
+                    }]
+                }
+            }
+        },
+        "scene_3": {
+            "scores": [600000,1100000,1800000,2400000,2800000],
+            "name": "cases.case_02.scenes.scene_3.name",
+            "target_text": "cases.case_02.scenes.scene_3.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "victim_apptment",
+            "img": "victim_apptment/thumb",
+            "items": {
+                "money": {
+                    "name": "cases.case_02.scenes.scene_3.items.money.name",
+                    "img": "images/cash",
+                    "layer": "Ulika_Sumka_special",
+                    "linked_layer": "Ulika_polovik_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["money"],
+                    "on_complete": [{
+                        "add_lab_item": "money"
+                    }, {
+                        "show_movie": "m13_1"
+                    }, {
+                        "progress_chapter": "205_explored_scene_3_state_1"
+                    }]
+                }
+            }
+        },
+        "bonus_1": {
+            "scores": [400000,800000,1200000,1800000,2400000],
+            "name": "cases.case_02.scenes.bonus_1.name",
+            "unlock_text": "sceneLockTextBonus",
+            "unlock_star": 3,
+            "type": "puzzle",
+            "path": "images/office_backstreet_puzzle",
+            "img": "images/2_puzzle",
+            "states": {
+                "default": {}
+            }
+        },
+        "bonus_2": {
+            "scores": [400000,800000,1100000,1600000,2000000],
+            "name": "cases.case_02.scenes.bonus_2.name",
+            "unlock_text": "sceneLockTextBonus",
+            "unlock_star": 10,
+            "type": "hogTime",
+            "path": "victim_apptment",
+            "img": "images/2_time_attack",
+            "items": {
+                "doormat": {
+                    "name": "cases.case_02.scenes.scene_3.items.doormat.name",
+                    "img": "images/pillow",
+                    "layer": "Ulika_polovik_special",
+                    "linked_layer": "Ulika_Sumka_special"
+                },
+                "money": {
+                    "name": "cases.case_02.scenes.scene_3.items.money.name",
+                    "img": "images/cash",
+                    "layer": "Ulika_Sumka_special"
+                }
+            },
+            "states": {
+                "default": {}
+            }
+        }
+    },
+    "forensic_items": {
+        "trash": {
+            "initial_state": "new",
+            "target_text": "cases.case_02.forensic_items.trash.target_text",
+            "states": {
+                "new": {
+                    "img": "images/trash",
+                    "minigame": {
+                        "data": {
+                            "type": "trash",
+                            "back": "images/_back_minigames",
+                            "path": "images/garbage",
+                            "target": "images/wallet",
+                            "trashCount": 60,
+                            "radius": 400,
+                            "completeText": "cases.case_02.forensic_items.trash.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_02.forensic_items.trash.states.new.minigame.title",
+                        "img_result": "images/wallet",
+                        "next_state": "explored",
+                        "on_complete": [{
+                            "show_movie": "m4"
+                        }, {
+                            "set_info_state": {
+                                "type": "victim",
+                                "state": "analyzed"
+                            }
+                        }, {
+                            "progress_chapter": "111_explored_forensic_item_trash"
+                        }, {
+                            "check_transition": "end_chapter_1"
+                        }]
+                    }
+                },
+                "explored": {
+                    "img": "images/wallet",
+                    "movie": "m_wallet"
+                }
+            }
+        },
+        "doorhandle": {
+            "initial_state": "new",
+            "target_text": "cases.case_02.forensic_items.doorhandle.target_text",
+            "states": {
+                "new": {
+                    "img": "images/door_handle",
+                    "minigame": {
+                        "data": {
+                            "type": "hotCold",
+                            "path": "images/minigame_doorhandle",
+                            "back": "images/_back_minigames",
+                            "target": "images/fingerprint1, images/fingerprint2, images/fingerprint3",
+                            "count": 3,
+                            "sizeX": 6,
+                            "sizeY": 6,
+                            "completeText": "cases.case_02.forensic_items.doorhandle.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_02.forensic_items.doorhandle.states.new.minigame.title",
+                        "img_result": "images/fingerprint1",
+                        "next_state": "explored",
+                        "on_complete": [{
+                            "show_movie": "m5"
+                        }, {
+                            "add_lab_item": "fingerprint"
+                        }, {
+                            "progress_chapter": "104_explored_forensic_item_doorhandle"
+                        }]
+                    }
+                },
+                "explored": {
+                    "img": "images/door_handle",
+                    "movie": "m_doorhandle"
+                }
+            }
+        },
+        "voice": {
+            "initial_state": "new",
+            "target_text": "cases.case_02.forensic_items.voice.target_text",
+            "states": {
+                "new": {
+                    "img": "images/voice_record",
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/voice_sample01, images/voice_sample02, images/voice_sample03, images/voice_sample04, images/voice_sample05",
+                            "sizeX": 5,
+                            "sizeY": 2,
+                            "completeText": "cases.case_02.forensic_items.voice.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_02.forensic_items.voice.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [{
+                            "show_movie": "m18"
+                        }, {
+                            "update_suspect_state": {
+                                "suspect": "gregory_jarvi",
+                                "motive": true,
+                                "text": "cases.case_02.add_motive.gregory_jarvi"
+                            }
+                        }, {
+                            "set_suspect_state": {
+                                "suspect": "gregory_jarvi",
+                                "state": "dialog_2"
+                            }
+                        }, {
+                            "progress_chapter": "303_explored_forensic_item_voice"
+                        }]
+                    }
+                },
+                "explored": {
+                    "img": "images/voice_record",
+                    "movie": "m_voice"
+                }
+            }
+        },
+        "film": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/camera",
+                    "movie": "m_film"
+                }
+            }
+        },
+        "priest_alibi": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/surv_record",
+                    "movie": "m_priest_alibi"
+                }
+            }
+        },
+        "dictophone": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/dect",
+                    "movie": "m_dictophone"
+                }
+            }
+        },
+        "fingerprint": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/fingerprint1",
+                    "movie": "m_fingerprint"
+                }
+            }
+        },
+        "money": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/cash",
+                    "movie": "m_money"
+                }
+            }
+        },
+        "camera_recording": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/record",
+                    "movie": "m_camera_recording"
+                }
+            }
+        }
+    },
+    "lab_items": {
+        "film": {
+            "name": "cases.case_02.lab_items.film.name",
+            "target_text": "cases.case_02.lab_items.film.target_text",
+            "img": "images/camera",
+            "item_type": "technics",
+            "analyze_time": 120,
+            "analyze_movie": "m3",
+            "on_analyze": [{
+                "set_info_state": {
+                    "type": "weapon",
+                    "state": "found"
+                }
+            },
+                {"add_forensic_item": "film"},
+            {
+                "update_killer_state": {
+                    "clues": ["man", "bruise"],
+                    "text": "cases.case_02.add_clues.man.bruise"
+                }
+            }, {
+                "set_scene_state": {
+                    "scene": "scene_1",
+                    "state": "2"
+                }
+            }, {
+                "progress_chapter": "102_explored_lab_item_film"
+            }]
+        },
+        "priest_alibi": {
+            "name": "cases.case_02.lab_items.priest_alibi.name",
+            "target_text": "cases.case_02.lab_items.priest_alibi.target_text",
+            "img": "images/surv_record",
+            "item_type": "technics",
+            "analyze_time": 3600,
+            "analyze_movie": "m7",
+            "on_analyze": [{
+                "progress_chapter": "107_lab_item_check_alibi_1_stanley_priest"
+            }, {
+                "set_suspect_state": {
+                    "suspect": "stanley_priest",
+                    "state": "dialog_2"
+                }
+            }, {
+                "add_forensic_item": "priest_alibi"
+            }]
+        },
+        "dictophone": {
+            "name": "cases.case_02.lab_items.dictophone.name",
+            "target_text": "cases.case_02.lab_items.dictophone.target_text",
+            "img": "images/dect",
+            "item_type": "technics",
+            "analyze_time": 14400,
+            "analyze_movie": "m10",
+            "on_analyze": [{
+                "update_killer_state": {
+                    "clues": ["prison"],
+                    "text": "cases.case_02.add_clues.prison"
+                }
+            },
+                {"add_forensic_item": "dictophone"},
+            {
+                "progress_chapter": "201_explored_lab_item_dictophone"
+            }, {
+                "add_custom_task": "prison_contacts"
+            }]
+        },
+        "fingerprint": {
+            "name": "cases.case_02.lab_items.fingerprint.name",
+            "target_text": "cases.case_02.lab_items.fingerprint.target_text",
+            "img": "images/fingerprint1",
+            "item_type": "technics",
+            "analyze_time": 1200,
+            "analyze_movie": "m5_1",
+            "on_analyze": [{
+                "add_suspect": "stanley_priest"
+            }, {
+                "set_suspect_state": {
+                    "suspect": "stanley_priest",
+                    "state": "dialog_1"
+                }
+            }, {"add_forensic_item": "fingerprint"},
+            {
+                "progress_chapter": "105_explored_lab_item_fingerprint"
+            }]
+        },
+        "money": {
+            "name": "cases.case_02.lab_items.money.name",
+            "target_text": "cases.case_02.lab_items.money.target_text",
+            "img": "images/cash",
+            "item_type": "docs",
+            "analyze_time": 10800,
+            "analyze_movie": "m13_2",
+            "on_analyze": [{
+                "progress_chapter": "206_explored_lab_item_money"
+            },
+                {"add_forensic_item": "money"},
+            {
+                "add_start_next_chapter_task": {
+                    "cost": 1
+                }
+            }]
+        },
+        "camera_recording": {
+            "name": "cases.case_02.lab_items.camera_recording.name",
+            "target_text": "cases.case_02.lab_items.camera_recording.target_text",
+            "img": "images/record",
+            "item_type": "technics",
+            "analyze_time": 25200,
+            "analyze_movie": "m20",
+            "on_analyze": [{
+                "update_suspect_state": {
+                    "suspect": "gregory_jarvi",
+                    "alibi": false,
+                    "text": "cases.case_02.add_alibi.gregory_jarvi"
+                }},
+                {"add_forensic_item": "camera_recording"},
+            {
+                "progress_chapter": "305_explored_forensic_item_camera_recording"
+            }, {
+                "init_arrest_state": null
+            }]
+        }
+    },
+    "clues": {
+        "man": {
+            "img": "images/male"
+        },
+        "bruise": {
+            "img": "images/fingal"
+        },
+        "prison": {
+            "img": "images/urka"
+        }
+    },
+    "suspect_properties": {
+        "prop_1": "age",
+        "prop_2": "weight"
+    },
+    "suspects": {
+        "stanley_priest": {
+            "clues": {
+                "man": {
+                    "match": true
+                },
+                "bruise": {
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_bookmaker",
+                    "portrait": "images/bookmaker_portret",
+                    "title": "cases.case_02.suspects.stanley_priest.states.default.title",
+                    "status": "cases.case_02.suspects.stanley_priest.states.default.status",
+                    "prop_1": "cases.case_02.suspects.stanley_priest.states.default.prop_1",
+                    "prop_2": "cases.case_02.suspects.stanley_priest.states.default.prop_2",
+                    "target_text": "cases.case_02.suspects.stanley_priest.states.default.target_text"
+                },
+                "dialog_1": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m6",
+                    "on_talk": [{
+                        "update_suspect_state": {
+                            "suspect": "stanley_priest",
+                            "clues": ["bruise", "man"],
+                            "motive": true,
+                            "text": "cases.case_02.add_suspect_clues.stanley_priest.bruise.man"
+                        }
+                    }, {
+                        "add_lab_item": "priest_alibi"
+                    }, {
+                        "progress_chapter": "106_suspect_stanley_priest_dialog_1"
+                    } ]
+                },
+                "dialog_2": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m8",
+                    "on_talk": [{
+                        "progress_chapter": "108_suspect_stanley_priest_dialog_2"
+                    }, {
+                        "add_custom_task": "priest_alibi_2"
+                    }]
+                }
+            }
+        },
+        "scott_pavi": {
+            "clues": {
+                "man": {
+                    "match": true
+                },
+                "bruise": {
+                    "match": true
+                },
+                "prison": {
+                    "img": "images/urka",
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_scott",
+                    "portrait": "images/scott_portret",
+                    "title": "cases.case_02.suspects.scott_pavi.states.default.title",
+                    "status": "cases.case_02.suspects.scott_pavi.states.default.status",
+                    "prop_1": "cases.case_02.suspects.scott_pavi.states.default.prop_1",
+                    "prop_2": "cases.case_02.suspects.scott_pavi.states.default.prop_2",
+                    "target_text": "cases.case_02.suspects.scott_pavi.states.default.target_text"
+                },
+                "dialog_1": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m12",
+                    "on_talk": [{
+                        "update_suspect_state": {
+                            "suspect": "scott_pavi",
+                            "clues": ["bruise"],
+                            "motive": true,
+                            "text": "cases.case_02.add_suspect_clues.scott_pavi.bruise"
+                        }
+                    }, {
+                        "progress_chapter": "203_suspect_scott_pavi_dialog_1"
+                    }, {
+                        "add_custom_task": "pavi_alibi"
+                    }]
+                },
+                "dialog_2": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m15",
+                    "on_talk": [{
+                        "add_suspect": "gregory_jarvi"
+                    }, {
+                        "set_suspect_state": {
+                            "suspect": "gregory_jarvi",
+                            "state": "dialog_1"
+                        }
+                    }, {
+                        "update_suspect_state": {
+                            "suspect": "gregory_jarvi",
+                            "clues": ["prison", "man"],
+                            "text": "cases.case_02.add_suspect_clues.gregory_jarvi.prison.man"
+                        }
+                    }, {
+                        "progress_chapter": "301_suspect_scott_pavi_dialog_2"
+                    }]
+                },
+                "dialog_3": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m26",
+                    "on_talk": [{
+                        "progress_chapter": "404_suspect_scott_pavi_dialog_3"
+                    }, {
+                        "add_custom_task": "donavan_dialog_2"
+                    }]
+                }
+            }
+        },
+        "gregory_jarvi": {
+            "clues": {
+                "man": {
+                    "match": true
+                },
+                "bruise": {
+                    "match": true
+                },
+                "prison": {
+                    "img": "images/urka",
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_bandit",
+                    "portrait": "images/jarvi_portret",
+                    "title": "cases.case_02.suspects.gregory_jarvi.states.default.title",
+                    "status": "cases.case_02.suspects.gregory_jarvi.states.default.status",
+                    "prop_1": "cases.case_02.suspects.gregory_jarvi.states.default.prop_1",
+                    "prop_2": "cases.case_02.suspects.gregory_jarvi.states.default.prop_2",
+                    "target_text": "cases.case_02.suspects.gregory_jarvi.states.default.target_text"
+                },
+                "dialog_1": {
+                    "talk_movie": "m16",
+                    "on_talk": [{
+                        "add_forensic_item": "voice"
+                    }, {
+                        "update_suspect_state": {
+                            "suspect": "gregory_jarvi",
+                            "clues": ["bruise"],
+                            "text": "cases.case_02.add_suspect_clues.gregory_jarvi.bruise"
+                        }
+                    }, {
+                        "progress_chapter": "302_suspect_gregory_jarvi_dialog_1"
+                    }, {
+                        "show_movie": "m17"
+                    }]
+                },
+                "dialog_2": {
+                    "talk_movie": "m19",
+                    "on_talk": [{
+                        "add_lab_item": "camera_recording"
+                    }, {
+                        "show_movie": "m19_1"
+                    }, {
+                        "progress_chapter": "304_suspect_gregory_jarvi_dialog_2"
+                    }]
+                },
+                "dialog_3": {
+                    "talk_movie": "m23",
+                    "on_talk": [{
+                        "progress_chapter": "401_suspect_gregory_jarvi_dialog_3"
+                    }, {
+                        "add_custom_task": "donavan_dialog_1"
+                    }]
+                }
+            }
+        }
+    },
+    "info": {
+        "victim": {
+            "analyzed": {
+                "name": "cases.case_02.info.victim.analyzed.name",
+                "description": "cases.case_02.info.victim.analyzed.description",
+                "img": "images/donavan_portret"
+            }
+        },
+        "weapon": {
+            "found": {
+                "name": "cases.case_02.info.weapon.found.name",
+                "description": "cases.case_02.info.weapon.found.description",
+                "img": "images/verevka"
+            }
+        },
+        "killer": {
+            "arrested": {
+                "name": "cases.case_02.info.killer.arrested.name",
+                "description": "cases.case_02.info.killer.arrested.description",
+                "img": "images/jarvi_portret"
+            }
+        }
+    },
+    "chapters": [{
+        "size": 11,
+        "img": "images/chapter_21",
+        "name": "cases.case_02.chapters.1.name",
+        "description": "cases.case_02.chapters.1.description",
+        "on_start": []
+    }, {
+        "size": 6,
+        "img": "images/chapter_22",
+        "name": "cases.case_02.chapters.2.name",
+        "description": "cases.case_02.chapters.2.description",
+        "on_start": [{
+            "add_lab_item": "dictophone"
+        }, {
+            "show_movie": "m9_1"
+        }]
+    }, {
+        "size": 6,
+        "img": "images/chapter_23",
+        "name": "cases.case_02.chapters.3.name",
+        "description": "cases.case_02.chapters.3.description",
+        "on_start": [{
+            "show_movie": "m14"
+        }, {
+            "set_suspect_state": {
+                "suspect": "scott_pavi",
+                "state": "dialog_2"
+            }
+        }]
+    }, {
+        "size": 5,
+        "img": "images/chapter_24",
+        "name": "cases.case_02.chapters.4.name",
+        "description": "cases.case_02.chapters.4.description",
+        "description_end": "cases.case_02.chapters.4.description_end",
+        "on_start": [{
+            "show_movie": "m22"
+        }, {
+            "set_suspect_state": {
+                "suspect": "gregory_jarvi",
+                "state": "dialog_3"
+            }
+        }]
+    }],
+    "on_start": [{
+        "drop_tutorial": null
+    }, {
+        "show_movie": "m1"
+    }, {
+        "open_new_scene": "scene_1"
+    }, {
+        "set_scene_state": {
+            "scene": "scene_1",
+            "state": "1"
+        }
+    }],
+    "arrest": {
+        "killer": "gregory_jarvi",
+        "on_success": [{
+            "show_movie": "m21"
+        }, {
+            "progress_chapter": "306_arrest_suspect_gregory_jarvi"
+        }, {
+            "set_info_state": {
+                "type": "killer",
+                "state": "arrested"
+            }
+        }, {
+            "add_start_next_chapter_task": {
+                "cost": 1
+            }
+        }],
+        "on_fail": [{
+            "show_movie": "m_wrong_arrest"
+        }]
+    },
+    "transitions": {
+        "end_chapter_1": {
+            "preconditions": [{
+                "scene_state": {
+                    "scene_2": "default"
+                }
+            }, {
+                "forensic_item_state": {
+                    "trash": "explored"
+                }
+            }, {
+                "suspect_state_talked": {
+                    "stanley_priest": "dialog_2"
+                }
+            }],
+            "on_complete": [{
+                "add_start_next_chapter_task": {
+                    "cost": 1
+                }
+            }]
+        }
+    },
+    "deductions": {
+        "donavan": {
+            "suspect_img": "images/char_victim_afraid",
+            "background_img": "images/_back_lab"
+        }
+    },
+    "custom_tasks": {
+        "prison_contacts": {
+            "name": "prison_contacts",
+            "cost": 1,
+            "img": "images/donavan_portret",
+            "action_text": "cases.case_02.custom_tasks.prison_contacts.action_text",
+            "target_text": "cases.case_02.custom_tasks.prison_contacts.target_text",
+            "on_click": [{
+                "show_movie": "m11"
+            }, {
+                "add_suspect": "scott_pavi"
+            }, {
+                "set_suspect_state": {
+                    "suspect": "scott_pavi",
+                    "state": "dialog_1"
+                }
+            }, {
+                "update_suspect_state": {
+                    "suspect": "scott_pavi",
+                    "clues": ["man", "prison"],
+                    "text": "cases.case_02.add_suspect_clues.scott_pavi.man.prison"
+                }
+            }, {
+                "progress_chapter": "202_custom_task_prison_contacts"
+            }]
+        },
+        "priest_alibi_2": {
+            "cost": 1,
+            "img": "images/bookmaker_portret",
+            "action_text": "cases.case_02.custom_tasks.alibi.action_text",
+            "target_text": "cases.case_02.custom_tasks.priest_alibi.target_text",
+            "on_click": [{
+                "show_movie": "m8_1"
+            }, {
+                "update_suspect_state": {
+                    "suspect": "stanley_priest",
+                    "alibi": true,
+                    "text": "cases.case_02.add_alibi.stanley_priest"
+                }
+            }, {
+                "open_new_scene": "scene_2"
+            }, {
+                "set_scene_state": {
+                    "scene": "scene_2",
+                    "state": "1"
+                }
+            }, {
+                "progress_chapter": "109_custom_task_check_alibi_2_stanley_priest"
+            }, {
+                "show_movie": "m8_2"
+            }]
+        },
+        "pavi_alibi":  {
+            "cost": 1,
+            "img": "images/scott_portret",
+            "action_text": "cases.case_02.custom_tasks.alibi.action_text",
+            "target_text": "cases.case_02.custom_tasks.Pavi_alibi.target_text",
+            "on_click": [{
+                "show_movie": "m13"
+            }, {
+                "update_suspect_state": {
+                    "suspect": "scott_pavi",
+                    "alibi": true,
+                    "text": "cases.case_02.add_alibi.scott_pavi"
+                }
+            }, {
+                "open_new_scene": "scene_3"
+            }, {
+                "set_scene_state": {
+                    "scene": "scene_3",
+                    "state": "1"
+                }
+            }, {
+                "progress_chapter": "204_custom_task_check_pavi_alibi"
+            }]
+        },
+        "donavan_dialog_1": {
+            "cost": 1,
+            "img": "images/donavan_portret",
+            "action_text": "cases.case_02.custom_tasks.donavan_dialog_1.action_text",
+            "target_text": "cases.case_02.custom_tasks.donavan_dialog_1.target_text",
+            "on_click": [{
+                "show_movie": "m24"
+            },{
+                "add_custom_task": "donavan_deduction"
+            }, {
+                "progress_chapter": "402_custom_task_donavan_dialog_1"
+            }]
+        },
+        "donavan_dialog_2": {
+            "cost": 1,
+            "img": "images/donavan_portret",
+            "action_text": "cases.case_02.custom_tasks.donavan_dialog_2.action_text",
+            "target_text": "cases.case_02.custom_tasks.donavan_dialog_2.target_text",
+            "on_click": [{
+                "show_movie": "m27"
+            }, {
+                "show_movie": "m28"
+            }, {
+                "set_suspect_state": {"suspect": "scott_pavi", "state": "default"}
+            }, {
+                "set_suspect_state": {"suspect": "gregory_jarvi", "state": "default"}
+            }, {
+                "progress_chapter": "405_custom_task_donavan_dialog_2"
+            }, {
+                "add_unlock_new_case_task": {"case": "case_03", "cost": 1}
+            }]
+        },
+        "donavan_deduction": {
+            "cost": 1,
+            "img": "images/donavan_portret",
+            "action_text": "tasks.deduction.action_text",
+            "target_text": "cases.case_02.custom_tasks.donavan_deduction.target_text",
+            "on_click": [{
+                "show_deductiond": "donavan"
+            }, {
+                "show_movie": "m25"
+            }, {
+                "set_suspect_state": {
+                    "suspect": "scott_pavi",
+                    "state": "dialog_3"
+                }
+            }, {
+                "progress_chapter": "403_custom_tusk_donavan_dedution"
+            }]
+        }
+    }
+}

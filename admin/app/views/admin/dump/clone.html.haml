@@ -1,0 +1,20 @@
+.row
+  .span12
+    - if @errors.any?
+      .alert.alert-error
+        - @errors.each do |error|
+          %b
+            = error
+    = form_tag dump_apply_path, class: 'form-horizontal', id: 'clone-dump' do
+      .control-group
+        = label_tag 'from_user_id', 'From user id:', class: 'control-label'
+        .controls
+          = hidden_field_tag 'from_user_id', current_core_user['social_id']
+          %strong.clone-from= current_core_user['social_id']
+      .control-group
+        = label_tag 'to_user_id', 'To user id:', class: 'control-label'
+        .controls
+          = text_field_tag 'to_user_id', params[:to_user_id]
+      .control-group
+        .controls
+          = button_tag 'Clone', id: 'clone-apply', class: 'btn btn-primary'

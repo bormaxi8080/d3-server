@@ -1,0 +1,34 @@
+---
+  backend_secret: "aCCKI7Nd3Yk1uneWZgIYFpJHGZCHkSZh1H5f6VhxVCYoyu7niEYDSO2vg3Bm" # ключ для админки
+  manifest_url: "http://109.202.17.170/detective_review/static/main.json" # адрес манифеста
+  cheat: false # разрешить читерить
+  fake_validation: false
+  logger:
+    separate_users: true
+    console_silent: true
+    console_level: "info"
+    file_silent: false
+    file_level: "info"
+    file_name: "logs/server.##.log"
+    filter_params: # параметры которые будут отображаться в логе в виде sessoin=Filtered
+      sq_session_id: true
+      auth_key: true
+      sess_id: true
+      gamedata: true
+  networks: #настройки социальных сетей
+    5:
+      name: "hybrid"
+      secret_key: "9Hej6RYoPnSUgKhsZug3FxOPk0OcWo7Tmgq5iDt0"
+      accounts:
+        DEV:
+          secret: "WSte1xznfpJEUMx7vitY"
+        LC:
+          secret: "i0U7C8jD9gmGlO5CZls6"
+        GC:
+          secret: "64OW4AwkU8cJnWo7TKLH"
+        FB:
+          url: "https://graph.facebook.com/me?access_token=<%= key %>"
+        VK:
+          url: "https://api.vk.com/method/getUserSettings?uid=<%= id %>&access_token=<%= key %>"
+      local: "DEV"
+      verify_url: "https://sandbox.itunes.apple.com/verifyReceipt"

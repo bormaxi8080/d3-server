@@ -1,0 +1,41 @@
+{
+    "schema_id": "hog_settings",
+    "ScoresComboMultiplierMin":1,
+    "ScoresComboMultiplierMax":6,
+    "ScoresComboMultiplierFadeTime":3,
+    "ScoresComboMultiplierIncrement":1,
+    "HogMissClickPenalityTime":3,
+    "HogMissClickPenalityCount":3,
+    "HogMissClickPenality":3,
+    "HogHintReloadTime":20,
+    "HogHintReloadCount":1,
+    "HogItemRepeatRate": 0.4,
+    "ScoreForMult": {
+        "hog":[25000, 30000, 35000, 40000, 50000, 60000],
+        "hogDiff":[30000, 35000, 40000, 45000, 55000, 65000],
+        "hogTime":[5500, 7500, 9500, 11500, 13500, 15500],
+        "puzzle":[25000, 30000, 35000, 40000, 50000, 60000]
+    },
+    "PuzzleGridSize": [
+        {"width":6, "height":4},
+        {"width":7, "height":5},
+        {"width":8, "height":6},
+        {"width":9, "height":7},
+        {"width":10, "height":8},
+        {"width":10, "height":8}
+    ],
+    "ItemsToFind": {
+        "hog":[6, 8, 9, 10, 11, 11],
+        "hogDiff":[5, 6, 7, 8, 9, 9],
+        "puzzle":[6, 8, 9, 10, 11, 11]
+    },
+    "TimeLimit": {
+        "hogTime":[40, 45, 50, 60, 70, 70]
+    },
+    "ExpAward": [11, 12, 13, 14, 15, 15],
+    "TimeMaxBonus":300000,
+    "TimeMinBonus":1000,
+    "ScorePerHint":20000,
+    "HintMaxCount":5,
+    "star_base_scores": [100000, 200000, 300000, 400000, 500000]
+}

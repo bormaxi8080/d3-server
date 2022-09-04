@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "hog_settings",
+    "type": "object",
+    "required": [ "ScoresComboMultiplierMin",
+    "ScoresComboMultiplierMax",
+    "ScoresComboMultiplierFadeTime",
+    "ScoresComboMultiplierIncrement",
+    "HogMissClickPenalityTime",
+    "HogMissClickPenalityCount",
+    "HogMissClickPenality",
+    "HogHintReloadTime",
+    "HogHintReloadCount",
+    "ScoreForMult1",
+    "ScoreForMult2",
+    "ScoreForMult3",
+    "ScoreForMult4",
+    "ScoreForMult5",
+    "ScoreForMult6",
+    "TimeMaxBonus",
+    "ScorePerHint",
+    "HintMaxCount",
+    "star_base_scores"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "schema_id": { "type": "string", "enum": [ "hog_settings" ] },
+        "ScoresComboMultiplierMin": {"type": "integer"},
+        "ScoresComboMultiplierMax": {"type": "integer"},
+        "ScoresComboMultiplierFadeTime": {"type": "integer"},
+        "ScoresComboMultiplierIncrement": {"type": "integer"},
+        "HogMissClickPenalityTime": {"type": "integer"},
+        "HogMissClickPenalityCount": {"type": "integer"},
+        "HogMissClickPenality": {"type": "integer"},
+        "HogHintReloadTime": {"type": "integer"},
+        "HogHintReloadCount": {"type": "integer"},
+        "ScoreForMult1": {"type": "integer"},
+        "ScoreForMult2": {"type": "integer"},
+        "ScoreForMult3": {"type": "integer"},
+        "ScoreForMult4": {"type": "integer"},
+        "ScoreForMult5": {"type": "integer"},
+        "ScoreForMult6": {"type": "integer"},
+        "TimeMaxBonus": {"type": "integer"},
+        "ScorePerHint": {"type": "integer"},
+        "HintMaxCount": {"type": "integer"},
+        "star_base_scores": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "additionalItems": false,
+            "items": {
+                "type": "integer"
+            }
+        }
+    }
+}

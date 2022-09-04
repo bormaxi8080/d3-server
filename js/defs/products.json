@@ -1,0 +1,234 @@
+{
+    "10bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 10,
+            "bonus": 0,
+            "total_value": 10,
+            "name": "product.10bucks.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 0.99,
+                "id": "com.socialquantum.detective.10bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 10,
+            "game_balance": 0
+        }
+    },
+    "50bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 50,
+            "bonus": 0,
+            "total_value": 50,
+            "name": "product.50bucks.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 4.99,
+                "id": "com.socialquantum.detective.50bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 50,
+            "game_balance": 0
+        }
+    },
+    "100bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 100,
+            "bonus": 10,
+            "total_value": 110,
+            "name": "product.100bucks.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 9.99,
+                "id": "com.socialquantum.detective.100bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 110,
+            "game_balance": 0
+        }
+    },
+    "200bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 200,
+            "bonus": 15,
+            "total_value": 230,
+            "name": "product.200bucks.presentation.name",
+            "flag": "hit_offer"
+        },
+        "store": {
+            "appstore": {
+                "cost": 19.99,
+                "id": "com.socialquantum.detective.200bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 230,
+            "game_balance": 0
+        }
+    },
+    "500bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 500,
+            "bonus": 20,
+            "total_value": 600,
+            "name": "product.500bucks.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 45.99,
+                "id": "com.socialquantum.detective.500bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 600,
+            "game_balance": 0
+        }
+    },
+    "1000bucks": {
+        "group": "real_balance",
+        "presentation": {
+            "base_value": 1000,
+            "bonus": 25,
+            "total_value": 1250,
+            "name": "product.1000bucks.presentation.name",
+            "flag": "best_offer"
+        },
+        "store": {
+            "appstore": {
+                "cost": 89.99,
+                "id": "com.socialquantum.detective.1000bucks"
+            }
+        },
+        "reward": {
+            "real_balance": 1250,
+            "game_balance": 0
+        }
+    },
+    "10kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 10000,
+            "bonus": 0,
+            "total_value": 10000,
+            "name": "product.10kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 0.99,
+                "id": "com.socialquantum.detective.10kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 10000
+        }
+    },
+    "50kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 50000,
+            "bonus": 0,
+            "total_value": 50000,
+            "name": "product.50kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 4.99,
+                "id": "com.socialquantum.detective.50kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 50000
+        }
+    },
+    "100kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 100000,
+            "bonus": 10,
+            "total_value": 110000,
+            "name": "product.100kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 9.99,
+                "id": "com.socialquantum.detective.100kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 110000
+        }
+    },
+    "200kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 200000,
+            "bonus": 15,
+            "total_value": 230000,
+            "flag": "hit_offer",
+            "name": "product.200kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 19.99,
+                "id": "com.socialquantum.detective.200kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 230000
+        }
+    },
+    "500kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 500000,
+            "bonus": 20,
+            "total_value": 600000,
+            "name": "product.500kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 45.99,
+                "id": "com.socialquantum.detective.500kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 600000
+        }
+    },
+    "1000kdimes": {
+        "group": "game_balance",
+        "presentation": {
+            "base_value": 1000000,
+            "bonus": 25,
+            "total_value": 1250000,
+            "flag": "best_offer",
+            "name": "product.1000kdimes.presentation.name"
+        },
+        "store": {
+            "appstore": {
+                "cost": 89.99,
+                "id": "com.socialquantum.detective.1000kdimes"
+            }
+        },
+        "reward": {
+            "real_balance": 0,
+            "game_balance": 1250000
+        }
+    }
+}

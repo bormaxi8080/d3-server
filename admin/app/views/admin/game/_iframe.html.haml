@@ -1,0 +1,7 @@
+.row
+  .span10
+    != (current_core_user.nil?) ? '' : "<iframe frameBorder='0' src='#{@base_url}?admin&viewer_id=#{current_core_user['social_id']}&user_id=#{current_core_user['social_id']}&get_logs_url=#{Rails.application.routes.url_helpers.view_logs_url :only_path=>true}' width='800px' height='1400px' />"
+  .span2
+    .menu_item
+      Menu
+    = link_to "Refresh", "#", :class => "btn btn-primary"

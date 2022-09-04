@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "tasks",
+    "type": "object",
+    "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "default_cost": {"type": "integer"},
+            "default_img": {"type": "string"},
+            "action_text": {"type": "string"}
+        },
+        "minProperties": 1
+    },
+    "required": [ "examine", "investigate", "analyze", "arrest", "start_next_chapter", "unlock_new_case"],
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["tasks"] },
+        "examine": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "action_text" ],
+            "properties": {
+                "action_text": {"type": "string"}
+            }
+        },
+        "investigate": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "action_text" ],
+            "properties": {
+                "action_text": {"type": "string"}
+            }
+        },
+        "analyze": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "action_text" ],
+            "properties": {
+                "action_text": {"type": "string"}
+            }
+        },
+        "question": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "action_text" ],
+            "properties": {
+                "action_text": {"type": "string"}
+            }
+        },
+        "arrest": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "action_text" ],
+            "properties": {
+                "action_text": {"type": "string"}
+            }
+        },
+        "start_next_chapter": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "default_cost", "default_img", "action_text" ],
+            "properties": {
+                "default_cost": {"type": "integer"},
+                "default_img": {"type": "string"},
+                "action_text": {"type": "string"}
+            }
+        },
+        "unlock_new_case": {
+            "type": "object",
+            "additionProperties": false,
+            "required": [ "default_cost", "default_img", "action_text" ],
+            "properties": {
+                "default_cost": {"type": "integer"},
+                "default_img": {"type": "string"},
+                "action_text": {"type": "string"}
+            }
+        }
+    }
+}

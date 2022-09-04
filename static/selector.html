@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            body {font-size: 40px;}
+            input, button {
+                padding: 10px;
+                font-size: 30px;
+            }
+            button {
+                margin-left: 10px;
+            }
+            input {
+                width: 300px;
+            }
+            .custom-input {
+                margin-top: 30px;
+            }
+            .container {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .inner {
+                text-align: center;
+                margin: 0 auto;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="inner">
+                <a href="detective://192.168.1.50/detective_alpha" class="server">Internal Alpha</a><br/>
+                <a href="detective://109.202.17.170/detective_beta" class="server">Beta</a><br/>
+                <a href="detective://109.202.17.170/detective_review?vertica_id=dfc40e9f4a0e4e2aae09077cdfad86ac" class="server">Review</a><br/>
+                <div class="custom-input">
+                    <input id="hostname"><button type="button" onclick="connect(hostname)">Connect!</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function connect(el) {
+                var href = document.createElement("a");
+                href.setAttribute("href", "detective://" + el.value);
+                href.appendChild(document.createTextNode("custom server"));
+                var evt = document.createEvent("MouseEvents");
+                evt.initMouseEvent("click", true, true, window,
+                      0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                href.dispatchEvent(evt);
+            }
+        </script>
+    </body>
+</html>

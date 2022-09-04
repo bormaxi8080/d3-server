@@ -1,0 +1,33 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.16'
+gem 'thin'
+gem 'pg'
+gem 'activerecord-vertica-adapter', :git => 'git://github.com/evrone/activerecord-vertica-adapter.git'
+
+gem 'jquery-rails'
+
+gem 'yajl-ruby', '~> 1.1.0'
+gem 'haml'
+gem 'haml-rails'
+gem 'twitter-bootstrap-rails'
+# gem 'squard', git: 'git@gitlab.sqtools.ru:squard.git', tag: 'v0.2.2'
+gem 'squard', git: 'https://gitlab.sqtools.ru/squard.git', tag: 'v0.2.2'
+gem 'rubyzip', '1.0.0', require: 'zip'
+gem 'faraday'
+
+group :test do
+  gem 'fabrication'
+  gem 'guard'
+  gem 'guard-rubocop'
+  gem 'guard-rspec'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'webmock'
+  gem 'sqlite3'
+  gem 'simplecov', :require => false
+end
+
+group :test, :development do
+  gem 'terminal-notifier-guard'
+end
+

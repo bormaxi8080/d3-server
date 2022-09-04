@@ -1,0 +1,153 @@
+{
+    "schema_id": "interface",
+    "tablet": {
+        "cost_text": {
+            "lab_analyzed": "interface.tablet.cost_text.lab_analyzed",
+            "lab_speedup": "interface.tablet.cost_text.lab_speedup",
+            "cost": "interface.tablet.cost_text.cost"
+        }
+    },
+    "suspect": {
+        "button_title": {
+            "arrest": "interface.suspect.button_title.arrest",
+            "repeat": "interface.suspect.button_title.repeat",
+            "talk": "interface.suspect.button_title.talk"
+        },
+        "button_color": {
+            "talk": "green",
+            "repeat": "blue",
+            "arrest": "red"
+        },
+        "properties": {
+            "age": {
+                "title": "interface.suspect.properties.age.title",
+                "img": "images/age_icon.png"
+            },
+            "weight": {
+                "title": "interface.suspect.properties.weight.title",
+                "img": "images/weight_icon.png"
+            },
+            "eye": {
+                "title": "interface.suspect.properties.eye.title",
+                "img": "images/weight_icon.png"
+            },
+            "blood": {
+                "title": "interface.suspect.properties.blood.title",
+                "img": "images/weight_icon.png"
+            }
+        },
+        "killer_clues_img": "images/some_man.png",
+        "killer_title": "interface.suspect.killer_title"
+    },
+    "forensics": {
+        "button_title": {
+            "minigame": "interface.forensics.button_title.minigame",
+            "repeat": "interface.forensics.button_title.repeat"
+        },
+        "button_color": {
+            "minigame": "green",
+            "repeat": "blue"
+        }
+    },
+    "laboratory": {
+        "button_title": {
+            "new": "interface.laboratory.button_title.new",
+            "analyzing": "interface.laboratory.button_title.analyzing",
+            "analyzed": "interface.laboratory.button_title.analyzed",
+            "done": "interface.laboratory.button_title.done"
+        },
+        "button_color": {
+            "new": "green",
+            "analyzing": "blue",
+            "analyzed": "green",
+            "done": "gray"
+        },
+        "tip_text": {
+            "analyzed": "interface.laboratory.tip_text.analyzed",
+            "done": "interface.laboratory.tip_text.done"
+        },
+        "item_types": {
+            "medicals": {
+                "character": "images/char_expert_medik.png",
+                "text": {
+                    "new": "interface.laboratory.item_types.text.new",
+                    "analyzing": "interface.laboratory.item_types.text.analyzing",
+                    "analyzed": "interface.laboratory.item_types.text.analyzed",
+                    "done": "interface.laboratory.item_types.text.done"
+                }
+            },
+            "chemicals": {
+                "character": "images/char_expert_himik.png",
+                "text": {
+                    "new": "interface.laboratory.item_types.text.new",
+                    "analyzing": "interface.laboratory.item_types.text.analyzing",
+                    "analyzed": "interface.laboratory.item_types.text.analyzed",
+                    "done": "interface.laboratory.item_types.text.done"
+                }
+            },
+            "technics": {
+                "character": "images/char_tehnik.png",
+                "text": {
+                    "new": "interface.laboratory.item_types.text.new",
+                    "analyzing": "interface.laboratory.item_types.text.analyzing",
+                    "analyzed": "interface.laboratory.item_types.text.analyzed",
+                    "done": "interface.laboratory.item_types.text.done"
+                }
+            },
+            "docs": {
+                "character": "images/char_secretary.png",
+                "text": {
+                    "new": "interface.laboratory.item_types.text.new",
+                    "analyzing": "interface.laboratory.item_types.text.analyzing",
+                    "analyzed": "interface.laboratory.item_types.text.analyzed",
+                    "done": "interface.laboratory.item_types.text.done"
+                }
+            },
+            "hack": {
+                "character": "images/char_hacker.png",
+                "text": {
+                    "new": "interface.laboratory.item_types.text.new",
+                    "analyzing": "interface.laboratory.item_types.text.analyzing",
+                    "analyzed": "interface.laboratory.item_types.text.analyzed",
+                    "done": "interface.laboratory.item_types.text.done"
+                }
+            }
+        }
+    },
+    "messages": {
+        "send_gift": {
+            "hog_usage" : {
+                "button_title": "interface.messages.send_gift.button_title",
+                "button_color": "blue",
+                "text": "interface.messages.send_gift.hog_usage.text",
+                "img": "images/energy_big"
+            },
+            "levelup": {
+                "button_title": "interface.messages.send_gift.button_title",
+                "button_color": "blue",
+                "text": "interface.messages.send_gift.levelup.text",
+                "img": "images/icon_coffee_cup_01"
+            }
+        },
+        "unlock_request": {
+            "button_color": "blue",
+            "img": "images/icon_request",
+            "on_request": {
+                "button_title": "interface.messages.unlock_request.on_request.button_title",
+                "text": "interface.messages.unlock_request.on_request.text"
+            },
+            "on_response": {
+                "button_title": "interface.messages.unlock_request.on_response.button_title",
+                "text": "interface.messages.unlock_request.on_response.text"
+            }
+        }
+    },
+    "settings": {
+        "loadscreen_tip_show_time": 10
+    },
+    "local_push_notifications": {
+        "analyze_done": "interface.local_push_notifications.analyze_done",
+        "full_energy": "interface.local_push_notifications.full_energy",
+        "can_investigate": "interface.local_push_notifications.can_investigate"
+    }
+}

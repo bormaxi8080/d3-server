@@ -1,0 +1,101 @@
+{
+    "schema_id": "packs",
+    "pack_types": {
+        "item_1_single": {
+            "name": "items.item_1.name",
+            "description": "items.item_1.description",
+            "img": "images/icon_coffee_cup_01",
+            "discount": 0,
+            "price": {
+                "real_balance": 10
+            },
+            "content": {
+                "item_1": 1
+            }
+        },
+        "item_1_pack": {
+            "name": "items.item_1.name",
+            "description": "items.item_1.description",
+            "img": "images/icon_coffee_cup_01",
+            "discount": 5,
+            "price": {
+                "real_balance": 28
+            },
+            "content": {
+                "item_1": 3
+            }
+        },
+        "item_2_single": {
+            "name": "items.item_2.name",
+            "description": "items.item_2.description",
+            "img": "images/icon_coffee_cup_02",
+            "discount": 0,
+            "price": {
+                "real_balance": 25
+            },
+            "content": {
+                "item_2": 1
+            }
+        },
+        "item_2_pack": {
+            "name": "items.item_2.name",
+            "description": "items.item_2.description",
+            "discount": 10,
+            "img": "images/icon_coffee_cup_02",
+            "price": {
+                "real_balance": 68
+            },
+            "content": {
+                "item_2": 3
+            }
+        },
+        "item_3_single": {
+            "name": "items.item_3.name",
+            "description": "items.item_3.description",
+            "img": "images/icon_coffee_cup_03",
+            "discount": 0,
+            "price": {
+                "real_balance": 50
+            },
+            "content": {
+                "item_3": 1
+            }
+        },
+        "item_3_pack": {
+            "name": "items.item_3.name",
+            "description": "items.item_3.description",
+            "img": "images/icon_coffee_cup_03",
+            "discount": 15,
+            "price": {
+                "real_balance": 128
+            },
+            "content": {
+                "item_3": 3
+            }
+        },
+        "item_4_single": {
+            "name": "items.item_4.name",
+            "description": "items.item_4.description",
+            "img": "images/icon_coffee_cup_04",
+            "discount": 0,
+            "price": {
+                "real_balance": 80
+            },
+            "content": {
+                "item_4": 1
+            }
+        },
+        "item_4_pack": {
+            "name": "items.item_4.name",
+            "description": "items.item_4.description",
+            "img": "images/icon_coffee_cup_04",
+            "discount": 25,
+            "price": {
+                "real_balance": 180
+            },
+            "content": {
+                "item_4": 3
+            }
+        }
+    }
+}

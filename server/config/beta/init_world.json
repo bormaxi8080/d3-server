@@ -1,0 +1,34 @@
+{
+    "player": {
+        "exp": 0,
+        "level": 1,
+        "hints": 1,
+        "game_balance": 5000,
+        "real_balance": 100,
+        "energy": {
+            "current": 110
+        },
+        "gender": "male",
+        "boosters": {
+            "quick_lookup": 2
+        }
+    },
+    "partners": {},
+    "fake_partners": {},
+    "options": {
+        "random_seed": 22,
+        "init_time": 1000000
+    },
+    "immediate_data": {
+        "analyzed_items": {},
+        "triggers": {
+        }
+    },
+    "tutorial": {
+        "state": "tutor_start"
+    },
+    "highscores": {},
+    "new_cases": {},
+    "unlocked_cases": ["case_01"],
+    "open_cases": {}
+}

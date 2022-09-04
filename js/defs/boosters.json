@@ -1,0 +1,81 @@
+{
+    "schema_id": "boosters",
+    "interface_order": ["quick_lookup", "full_hints", "full_multiplier", "minimal_multiplier", "highlight_timer"],
+    "booster_types": {
+        "quick_lookup": {
+            "name": "boosters.booster_types.quick_lookup.name",
+            "description": "boosters.booster_types.quick_lookup.description",
+            "tablet_name": "boosters.booster_types.quick_lookup.tablet_name",
+            "tablet_description": "boosters.booster_types.quick_lookup.tablet_description",
+            "img": "images/icon_booster_cooldown",
+            "pack_size": 3,
+            "require": {
+                "medal": "silver",
+                "star": 1
+            },
+            "unsupported": ["puzzle", "hogDiff"],
+            "price": {
+                "game_balance": 500
+            }
+        },
+        "full_hints": {
+            "name": "boosters.booster_types.full_hints.name",
+            "description": "boosters.booster_types.full_hints.description",
+            "tablet_name": "boosters.booster_types.full_hints.tablet_name",
+            "tablet_description": "boosters.booster_types.full_hints.tablet_description",
+            "img": "images/icon_booster_five",
+            "pack_size": 3,
+            "require": {
+                "medal": "silver",
+                "star": 2
+            },
+            "price": {
+                "game_balance": 1500
+            }
+        },
+        "full_multiplier": {
+            "name": "boosters.booster_types.full_multiplier.name",
+            "description": "boosters.booster_types.full_multiplier.description",
+            "tablet_name": "boosters.booster_types.full_multiplier.tablet_name",
+            "tablet_description": "boosters.booster_types.full_multiplier.tablet_description",
+            "img": "images/icon_booster_x6",
+            "pack_size": 3,
+            "require":{
+                "medal": "silver",
+                "star": 3
+            },
+            "unsupported": ["hog", "puzzle", "hogDiff", "hogTime"],
+            "price": {
+                "game_balance": 3000
+            }
+        },
+        "minimal_multiplier": {
+            "name": "boosters.booster_types.minimal_multiplier.name",
+            "description": "boosters.booster_types.minimal_multiplier.description",
+            "tablet_name": "boosters.booster_types.minimal_multiplier.tablet_name",
+            "tablet_description": "boosters.booster_types.minimal_multiplier.tablet_description",
+            "img": "images/icon_booster_x3",
+            "pack_size": 3,
+            "require": {
+                "medal": "gold",
+                "star": 4
+            },
+            "price": {
+                "real_balance": 3
+            }
+        },
+        "highlight_timer": {
+            "name": "boosters.booster_types.highlight_timer.name",
+            "description": "boosters.booster_types.highlight_timer.description",
+            "tablet_name": "boosters.booster_types.highlight_timer.tablet_name",
+            "tablet_description": "boosters.booster_types.highlight_timer.tablet_description",
+            "img": "images/icon_booster_5sec",
+            "pack_size": 3,
+            "unsupported": ["puzzle"],
+            "price": {
+                "real_balance": 2
+            }
+        }
+    },
+    "tooltip": "boosters.tooltip"
+}

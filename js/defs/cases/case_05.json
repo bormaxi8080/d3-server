@@ -1,0 +1,1397 @@
+{
+    "schema_id": "case",
+    "name": "cases.case_05.name",
+    "description": "cases.case_05.description",
+    "scene_order": ["scene_1", "scene_2", "bonus_1", "scene_3", "scene_4", "bonus_2", "scene_5", "scene_6", "bonus_3"],
+    "scenes": {
+        "scene_1": {
+            "scores": [1200000,1700000,2300000,3000000,3800000],
+            "name": "cases.case_05.scenes.scene_1.name",
+            "target_text": "cases.case_05.scenes.scene_1.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_penthouse",
+            "img": "hog_penthouse/thumb",
+            "items": {
+                "woman": {
+                    "name": "cases.case_05.scenes.scene_1.items.woman.name",
+                    "img": "images/dead_pic",
+                    "layer": "woman_special"
+                },
+                "footprint": {
+                    "name": "cases.case_05.scenes.scene_1.items.footprint.name",
+                    "img": "images/footprint",
+                    "layer": "footprint_special"
+                },
+                "torn_paper": {
+                    "name": "cases.case_05.scenes.scene_1.items.torn_paper.name",
+                    "img": "images/torn_papers",
+                    "layer": "torn_paper_special"
+                },
+                "pistol": {
+                    "name": "cases.case_05.scenes.scene_1.items.pistol.name",
+                    "img": "images/revolver",
+                    "layer": "gun_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["woman", "footprint", "torn_paper", "pistol"],
+                    "on_complete": [
+                        {"show_movie": "m2"},
+                        {"set_info_state": {"type": "victim", "state": "found"}},
+                        {"add_forensic_item": "body"},
+                        {"add_lab_item": "sled"},
+                        {"add_forensic_item": "note"},
+                        {"add_forensic_item": "pistol"},
+                        {"update_killer_state": {
+                            "clues": ["man_185", "tolstovka"],
+                            "text": "cases.case_05.add_clues.man_185.tolstovka"
+                        }},
+                        {"progress_chapter": "101_explored_scene_1_state_1"}
+                    ]
+                }
+            }
+        },
+        "scene_2": {
+            "scores": [1400000,1900000,2500000,3200000,4000000],
+            "name": "cases.case_05.scenes.scene_2.name",
+            "target_text": "cases.case_05.scenes.scene_2.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_villa",
+            "img": "hog_villa/thumb",
+            "items": {
+                "woman_purse": {
+                    "name": "cases.case_05.scenes.scene_2.items.woman_purse.name",
+                    "img": "images/woman_purse",
+                    "layer": "purse_special"
+                },
+                "scotch": {
+                    "name": "cases.case_05.scenes.scene_2.items.scotch.name",
+                    "img": "images/scotch",
+                    "layer": "scotch_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["woman_purse", "scotch"],
+                    "on_complete": [
+                        {"show_movie": "m9"},
+                        {"add_forensic_item": "woman_purse"},
+                        {"add_lab_item": "scotch"},
+                        {"progress_chapter": "107_explored_scene_2_state_1"}
+                    ]
+                }
+            }
+        },
+        "scene_3": {
+            "scores": [1200000,1700000,2300000,3000000,3800000],
+            "name": "cases.case_05.scenes.scene_3.name",
+            "target_text": "cases.case_05.scenes.scene_3.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_club",
+            "img": "hog_club/thumb",
+            "items": {
+                "security_cam": {
+                    "name": "cases.case_05.scenes.scene_3.items.security_cam.name",
+                    "img": "images/security_cam",
+                    "layer": "camera_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["security_cam"],
+                    "on_complete": [
+                        {"show_movie": "m14"},
+                        {"add_lab_item": "security_cam"},
+                        {"progress_chapter": "201_explored_scene_3_state_1"}
+                    ]
+                }
+            }
+        },
+        "scene_4": {
+            "scores": [1500000,2000000,2600000,3300000,4100000],
+            "name": "cases.case_05.scenes.scene_4.name",
+            "target_text": "cases.case_05.scenes.scene_4.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_street",
+            "img": "hog_street/thumb",
+            "items": {
+                "cocaine_pack": {
+                    "name": "cases.case_05.scenes.scene_4.items.cocaine_pack.name",
+                    "img": "images/cock",
+                    "layer": "cock_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["cocaine_pack"],
+                    "on_complete": [
+                        {"show_movie": "m24"},
+                        {"add_lab_item": "cocaine_pack"},
+                        {"progress_chapter": "208_explored_scene_4_state_1"}
+                    ]
+                }
+            }
+        },
+        "scene_5": {
+            "scores": [1200000,1700000,2300000,3000000,3800000],
+            "name": "cases.case_05.scenes.scene_5.name",
+            "target_text": "cases.case_05.scenes.scene_5.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_room",
+            "img": "hog_room/thumb",
+            "items": {
+                "scotch_2": {
+                    "name": "cases.case_05.scenes.scene_5.items.scotch_2.name",
+                    "img": "images/scotch_2",
+                    "layer": "scotch2_special"
+                },
+                "photos": {
+                    "name": "cases.case_05.scenes.scene_5.items.photos.name",
+                    "img": "images/stack_of_photos",
+                    "layer": "photos_special"
+                },
+                "drug": {
+                    "name": "cases.case_05.scenes.scene_5.items.drug.name",
+                    "img": "images/cock",
+                    "layer": "cock_special"
+                },
+                "money_bundle": {
+                    "name": "cases.case_05.scenes.scene_5.items.money_bundle.name",
+                    "img": "images/cash",
+                    "layer": "10"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["scotch_2", "photos", "drug"],
+                    "on_complete": [
+                        {"show_movie": "m30"},
+                        {"add_forensic_item": "scotch_2"},
+                        {"add_forensic_item": "stack_of_photos"},
+                        {"add_lab_item": "drug"},
+                        {"progress_chapter": "303_explored_scene_5_state_1"}
+                    ]
+                },
+                "2": {
+                    "items": ["money_bundle"],
+                    "on_complete": [
+                        {"show_movie": "m47"},
+                        {"add_forensic_item": "money_bundle"},
+                        {"progress_chapter": "412_explored_scene_5_state_2"}
+                    ]
+                }
+            }
+        },
+        "scene_6": {
+            "scores": [1500000,2000000,2600000,3300000,4100000],
+            "name": "cases.case_05.scenes.scene_6.name",
+            "target_text": "cases.case_05.scenes.scene_6.target_text",
+            "unlock_text": "sceneLockText",
+            "type": "hog",
+            "path": "hog_butik",
+            "img": "hog_butik/thumb",
+            "items": {
+                "documents": {
+                    "name": "cases.case_05.scenes.scene_6.items.documents.name",
+                    "img": "images/papers_special",
+                    "layer": "papers_special"
+                },
+                "tablet": {
+                    "name": "cases.case_05.scenes.scene_6.items.tablet.name",
+                    "img": "images/tablet",
+                    "layer": "tablet_special"
+                }
+            },
+            "states": {
+                "default": {},
+                "1": {
+                    "items": ["documents"],
+                    "on_complete": [
+                        {"show_movie": "m37"},
+                        {"add_forensic_item": "documents"},
+                        {"progress_chapter": "402_scene_6_state_1"}
+                    ]
+                },
+                "2": {
+                    "items": ["tablet"],
+                    "on_complete": [
+                        {"show_movie": "m39"},
+                        {"add_forensic_item": "morgans_tablet"},
+                        {"progress_chapter": "405_explored_scene_6_state_2"}
+                    ]
+                }
+            }
+        },
+        "bonus_1": {
+            "scores": [1000000,1500000,2100000,2800000,3600000],
+            "name": "cases.case_05.scenes.bonus_1.name",
+            "unlock_text": "sceneLockTextBonus",
+            "unlock_star": 4,
+            "type": "puzzle",
+            "path": "images/penthouse_puzzle",
+            "img": "images/5_puzzle",
+            "states": {
+                "default": {}
+            }
+        },
+        "bonus_2": {
+            "scores": [2000000,2500000,3100000,3800000,4600000],
+            "name": "cases.case_05.scenes.bonus_2.name",
+            "unlock_text": "sceneLockTextBonus",
+            "unlock_star": 10,
+            "type": "hogTime",
+            "path": "hog_club",
+            "img": "images/5_time_attack",
+            "items": {
+                "security_cam": {
+                    "name": "cases.case_05.scenes.scene_3.items.security_cam.name",
+                    "img": "images/security_cam",
+                    "layer": "camera_special"
+                }
+            },
+            "states": {
+                "default": {}
+            }
+        },
+        "bonus_3": {
+            "scores": [2000000,2500000,3100000,3800000,4600000],
+            "name": "cases.case_05.scenes.bonus_3.name",
+            "unlock_text": "sceneLockTextBonus",
+            "unlock_star": 20,
+            "type": "hogDiff",
+            "path": "hog_room",
+            "img": "images/5_diff",
+            "items": {
+                "scotch_2": {
+                    "name": "cases.case_05.scenes.scene_5.items.scotch_2.name",
+                    "img": "images/scotch_2",
+                    "layer": "scotch2_special"
+                },
+                "photos": {
+                    "name": "cases.case_05.scenes.scene_5.items.photos.name",
+                    "img": "images/stack_of_photos",
+                    "layer": "photos_special"
+                },
+                "drug": {
+                    "name": "cases.case_05.scenes.scene_5.items.drug.name",
+                    "img": "images/cock_pile",
+                    "layer": "cock_special"
+                },
+                "money_bundle": {
+                    "name": "cases.case_05.scenes.scene_5.items.money_bundle.name",
+                    "img": "images/cash",
+                    "layer": "010"
+                }
+            },
+            "states": {
+                "default": {}
+            }
+        }
+    },
+    "forensic_items": {
+        "body":{
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.body.target_text",
+            "states": {
+                "new": {
+                    "img": "images/dead_pic",
+                    "wrapped": false,
+                    "minigame": {
+                        "data": {
+                            "type": "hotCold",
+                            "back": "images/_back_minigames",
+                            "path": "images/mg_body_fon",
+                            "target": "images/mg_bullet_1",
+                            "count": 1,
+                            "sizeX": 8,
+                            "sizeY": 10,
+                            "completeText": "cases.case_05.forensic_items.body.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.body.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/mg_bullet_1",
+                        "on_complete": [
+                            {"show_movie": "m3"},
+                            {"set_info_state": {"type": "victim", "state": "analyzed"}},
+                            {"update_killer_state": {
+                                "clues": ["scotch", "drug"],
+                                "text": "cases.case_05.add_clues.scotch.drug"
+                            }},
+                            {"progress_chapter": "102_explored_forensic_item_body"},
+                            {"check_transition": "accuse_tyler"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/dead_pic",
+                    "wrapped": false,
+                    "movie": "m_body"
+                }
+            }
+        },
+        "note": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.note.target_text",
+            "states": {
+                "new": {
+                    "img": "images/torn_papers",
+                    "minigame": {
+                        "data": {
+                            "type": "puzzle",
+                            "back": "images/_back_minigames",
+                            "path": "images/Broken_item_MG",
+                            "completeText": "cases.case_05.forensic_items.note.states.new.minigame.complete",
+                            "linkInfo": "01:02,03,04;02:01,04;03:01,04,05,06;04:01,02,03,06;05:03,06;06:02,03,04,05"
+                        },
+                        "title": "cases.case_05.forensic_items.note.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/note_complete",
+                        "on_complete":[
+                            {"show_movie": "m5"},
+                            {"add_suspect": "tyler"},
+                            {"progress_chapter": "103_explored_forensic_item_note"},
+                            {"check_transition": "accuse_tyler"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/note_complete",
+                    "movie": "m_note"
+                }
+            }
+        },
+        "pistol": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.pistol.target_text",
+            "states": {
+                "new": {
+                    "img": "images/revolver",
+                    "minigame": {
+                        "data": {
+                            "type": "hotCold",
+                            "back": "images/_back_minigames",
+                            "path": "images/mg_pistol_fon",
+                            "target": "images/fingerprint_mg",
+                            "count": 3,
+                            "sizeX": 8,
+                            "sizeY": 10,
+                            "completeText": "cases.case_05.forensic_items.pistol.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.pistol.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/fingerprint_mg",
+                        "on_complete":[
+                            {"show_movie": "m6"},
+                            {"set_info_state": {"type": "weapon", "state": "found"}},
+                            {"progress_chapter": "105_explored_forensic_iitem_pistol"},
+                            {"check_transition": "accuse_tyler"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/revolver",
+                    "movie": "m_pistol"
+                }
+            }
+        },
+        "woman_purse": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.woman_purse.target_text",
+            "states": {
+                "new": {
+                    "img": "images/woman_purse",
+                    "wrapped": false,
+                    "minigame": {
+                        "data": {
+                            "type": "trash",
+                            "back": "images/_back_minigames",
+                            "path": "images/woman_trash",
+                            "target": "images/smartphone_mg",
+                            "trashCount": 60,
+                            "radius": 400,
+                            "completeText": "cases.case_05.forensic_items.woman_purse.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.woman_purse.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/smartphone",
+                        "on_complete":[
+                            {"show_movie": "m10"},
+                            {"progress_chapter": "109_explored_forensic_item_woman_purse"},
+                            {"add_forensic_item": "smartphone"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/woman_purse",
+                    "wrapped": false,
+                    "movie": "m_woman_purse"
+                }
+            }
+        },
+        "smartphone": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.dianas_phone.target_text",
+            "states": {
+                "new": {
+                    "img": "images/smartphone",
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/1, images/2, images/3, images/4, images/5, images/6, images/7, images/8, images/9",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.dianas_phone.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.dianas_phone.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [
+                            {"show_movie": "m11"},
+                            {"add_suspect": "banksy"},
+                            {"set_suspect_state": {"suspect": "banksy", "state": "hidden"}},
+                            {"progress_chapter": "110_explored_forensic_item_smartphone"},
+                            {"check_transition": "end_chapter_1"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/smartphone",
+                    "movie": "m_smartphone"
+                }
+            }
+        },
+        "club_photos": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.club_photos.target_text",
+            "states": {
+                "new": {
+                    "img": "images/club_photo",
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/photo1, images/photo2, images/photo3, images/photo4, images/photo5, images/photo6, images/photo7, images/photo8, images/photo_goal",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.club_photos.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.club_photos.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/photo_goal",
+                        "on_complete": [
+                            {"show_movie": "m16"},
+                            {"update_suspect_state": {
+                                "suspect": "tyler",
+                                "alibi": false,
+                                "text": "cases.case_05.add_alibi.tyler"
+                            }},
+                            {"set_suspect_state": {"suspect": "tyler", "state": "dialog_2"}},
+                            {"progress_chapter": "203_explored_forensic_item_club_photos"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/club_photo",
+                    "movie": "m_club_photos"
+                }
+            }
+        },
+        "ronsun_watch": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.ronsun_watch.target_text",
+            "states": {
+                "new": {
+                    "img": "images/female_watches",
+                    "minigame": {
+                        "data": {
+                            "type": "hotCold",
+                            "back": "images/_back_minigames",
+                            "path": "images/mg_watch_fon",
+                            "target": "images/fingerprint_mg",
+                            "count": 3,
+                            "sizeX": 8,
+                            "sizeY": 10,
+                            "completeText": "cases.case_05.forensic_items.ronsun_watch.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.ronsun_watch.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/fingerprint_mg",
+                        "on_complete": [
+                            {"show_movie": "m20"},
+                            {"add_suspect": "bolton"},
+                            {"show_movie": "m21"},
+                            {"update_suspect_state": {
+                                "suspect": "bolton",
+                                "motive": true,
+                                "text": "cases.case_05.add_motive.bolton"
+                            }},
+                            {"set_suspect_state": {"suspect": "bolton", "state": "dialog_1"}},
+                            {"progress_chapter": "206_explored_forensic_item_ronsun_watch"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/female_watches",
+                    "movie": "m_ronsun_watch"
+                }
+            }
+        },
+        "scotch_2": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.scotch_2.target_text",
+            "states": {
+                "new": {
+                    "img": "images/scotch_2",
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/scotch_mg_1, images/scotch_mg_2, images/scotch_mg_3, images/scotch_mg_4, images/scotch_mg_5, images/scotch_mg_6, images/scotch_mg_7, images/scotch_mg_8, images/scotch_mg_9, images/scotch_mg_10, images/scotch_mg_11, images/scotch_mg_12",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.scotch_2.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.scotch_2.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [
+                            {"show_movie": "m31"},
+                            {"update_suspect_state": {
+                                "suspect": "banksy",
+                                "clues": ["scotch"],
+                                "text": "cases.case_05.add_suspect_clues.banksy.scotch"
+                            }},
+                            {"progress_chapter": "304_explored_forensic_item_scotch_2"},
+                            {"check_transition": "accuse_banksy"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/scotch_2",
+                    "movie": "m_scotch_2"
+                }
+            }
+        },
+        "stack_of_photos": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.stack_of_photos.target_text",
+            "states": {
+                "new": {
+                    "img": "images/stack_of_photos",
+                    "minigame": {
+                        "data": {
+                            "type": "trash",
+                            "back": "images/_back_minigames",
+                            "target": "images/banksy_goal",
+                            "path": "images/photo",
+                            "trashCount": 30,
+                            "radius": 400,
+                            "completeText": "cases.case_05.forensic_items.stack_of_photos.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.stack_of_photos.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/banksy_goal",
+                        "on_complete": [
+                            {"show_movie": "m32"},
+                            {"update_suspect_state": {
+                                "suspect": "banksy",
+                                "clues": ["tolstovka"],
+                                "text": "cases.case_05.add_suspect_clues.banksy.tolstovka"
+                            }},
+                            {"progress_chapter": "306_explored_forensic_item_stack_of_photos"},
+                            {"check_transition": "accuse_banksy"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/banksy_explored",
+                    "movie": "m_stack_of_photos"
+                }
+            }
+        },
+        "morgans_tablet": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.morgans_tablet.target_text",
+            "states": {
+                "new": {
+                    "img": "images/tablet",
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/1, images/2, images/3, images/4, images/5, images/6, images/7, images/8, images/9",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.morgans_tablet.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.morgans_tablet.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [
+                            {"show_movie": "m40"},
+                            {"add_forensic_item": "morgans_mail"},
+                            {"add_forensic_item": "morgans_photos"},
+                            {"progress_chapter": "406_explored_forensic_item_morgans_tablet"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/tablet",
+                    "movie": "m_morgans_tablet"
+                }
+            }
+        },
+        "money_bundle": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.money_bundle.target_text",
+            "states": {
+                "new": {
+                    "img": "images/more_money",
+                    "wrapped": false,
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/1, images/2, images/3, images/4, images/5, images/6, images/7, images/8, images/9",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.money_bundle.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.money_bundle.states.new.minigame.title",
+                        "next_state": "explored",
+                        "on_complete": [
+                            {"show_movie": "m48"},
+                            {"update_suspect_state": {
+                                "suspect": "banksy",
+                                "motive": true,
+                                "text": "cases.case_05.add_motive.banksy"
+                            }},
+                            {"set_suspect_state": {"suspect": "morgan", "state": "dialog_2"}},
+                            {"progress_chapter": "413_explored_forensic_item_money_bundle"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/more_money",
+                    "wrapped": false,
+                    "movie": "m_money_bundle"
+                }
+            }
+        },
+        "documents": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.documents.target_text",
+            "states": {
+                "new": {
+                    "img": "images/papers_special",
+                    "minigame": {
+                        "data": {
+                            "type": "trash",
+                            "back": "images/_back_minigames",
+                            "target": "images/mg_note2",
+                            "path": "images/trash_minigame_case5",
+                            "trashCount": 30,
+                            "radius": 400,
+                            "completeText": "cases.case_05.forensic_items.documents.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.documents.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/note2",
+                        "on_complete": [
+                            {"show_movie": "m37_2"},
+                            {"add_suspect": "morgan"},
+                            {"set_suspect_state": {"suspect": "morgan", "state": "dialog_1"}},
+                            {"progress_chapter": "403_explored_forensic_item_documents"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/papers_special",
+                    "movie": "m_documents"
+                }
+            }
+        },
+        "morgans_mail": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.morgans_mail.target_text",
+            "states": {
+                "new": {
+                    "img": "images/mail_locked",
+                    "wrapped": false,
+                    "minigame": {
+                        "data": {
+                            "type": "trash",
+                            "back": "images/_back_minigames",
+                            "target": "images/mail_unlocked",
+                            "path": "images/icons_mg_case5",
+                            "trashCount": 30,
+                            "radius": 400,
+                            "completeText": "cases.case_05.forensic_items.morgans_mail.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.morgans_mail.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/mail_unlocked",
+                        "on_complete": [
+                            {"show_movie": "m41"},
+                            {"add_lab_item": "morgans_letter"},
+                            {"add_lab_item": "dianas_letter"},
+                            {"progress_chapter": "408_explored_forensic_item_morgans_mail"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/mail_unlocked",
+                    "wrapped": false,
+                    "movie": "m_morgans_mail"
+                }
+            }
+        },
+        "morgans_photos": {
+            "initial_state": "new",
+            "target_text": "cases.case_05.forensic_items.morgans_photos.target_text",
+            "states": {
+                "new": {
+                    "img": "images/photos_locked",
+                    "wrapped": false,
+                    "minigame": {
+                        "data": {
+                            "type": "findPair",
+                            "back": "images/_back_minigames",
+                            "images": "images/banksy_morgan_1, images/banksy_morgan_2, images/banksy_morgan_3, images/banksy_morgan_4, images/banksy_morgan_5, images/banksy_morgan_6, images/banksy_morgan_7, images/banksy_morgan_8, images/banksy_morgan_9",
+                            "sizeX": 6,
+                            "sizeY": 3,
+                            "completeText": "cases.case_05.forensic_items.morgans_photos.states.new.minigame.complete"
+                        },
+                        "title": "cases.case_05.forensic_items.morgans_photos.states.new.minigame.title",
+                        "next_state": "explored",
+                        "img_result": "images/banksy_and_morgan",
+                        "on_complete": [
+                            {"show_movie": "m44"},
+                            {"progress_chapter": "407_explored_forensic_item_morgans_photos"},
+                            {"check_transition": "accuse_morgan"}
+                        ]
+                    }
+                },
+                "explored": {
+                    "img": "images/photos_unlocked",
+                    "wrapped": false,
+                    "movie": "m_morgans_photos"
+                }
+            }
+        },
+        "sled": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/footprint",
+                    "movie": "m_sled",
+                    "wrapped": false
+                }
+            }
+        },
+        "scotch": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/scotch",
+                    "movie": "m_scotch"
+                }
+            }
+        },
+        "security_cam": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/security_cam",
+                    "movie": "m_security_cam"
+                }
+            }
+        },
+        "cocaine_pack": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/cock",
+                    "movie": "m_cocaine_pack"
+                }
+            }
+        },
+        "drug": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/cock_pile",
+                    "movie": "m_drug"
+                }
+            }
+        },
+        "dianas_letter": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/envelope",
+                    "movie": "m_dianas_letter",
+                    "wrapped": false
+                }
+            }
+        },
+        "morgans_letter": {
+            "initial_state": "explored",
+            "states": {
+                "explored": {
+                    "img": "images/envelope2",
+                    "movie": "m_morgans_letter",
+                    "wrapped": false
+                }
+            }
+        }
+    },
+    "lab_items": {
+        "sled": {
+            "name": "cases.case_05.lab_items.sled.name",
+            "target_text": "cases.case_05.lab_items.sled.target_text",
+            "img": "images/footprint",
+            "item_type": "technics",
+            "analyze_time": 3600,
+            "analyze_movie": "m4",
+            "on_analyze": [
+                {"update_killer_state": {
+                    "clues": ["sled_44"],
+                    "text": "cases.case_05.add_clues.sled_44"
+                }},
+                {"add_forensic_item": "sled"},
+                {"progress_chapter": "104_explored_lab_item_sled"},
+                {"check_transition": "accuse_tyler"}
+            ]
+        },
+        "scotch": {
+            "name": "cases.case_05.lab_items.scotch.name",
+            "target_text": "cases.case_05.lab_items.scotch.target_text",
+            "img": "images/scotch",
+            "item_type": "chemicals",
+            "analyze_time": 21600,
+            "analyze_movie": "m12",
+            "on_analyze": [
+                {"update_suspect_state": {
+                    "suspect": "tyler",
+                    "clues": ["scotch"],
+                    "text": "cases.case_05.add_suspect_clues.tyler.scotch"
+                }},
+                {"add_forensic_item": "scotch"},
+                {"progress_chapter": "108_explored_lab_item_scotch"},
+                {"check_transition": "end_chapter_1"}
+            ]
+        },
+        "security_cam": {
+            "name": "cases.case_05.lab_items.security_cam.name",
+            "target_text": "cases.case_05.lab_items.security_cam.target_text",
+            "img": "images/security_cam",
+            "item_type": "hack",
+            "analyze_time": 21600,
+            "analyze_movie": "m15",
+            "on_analyze": [
+                {"add_forensic_item": "club_photos"},
+                {"add_forensic_item": "security_cam"},
+                {"progress_chapter": "202_explored_lab_item_security_cam"}
+            ]
+        },
+        "cocaine_pack": {
+            "name": "cases.case_05.lab_items.cocaine_pack.name",
+            "target_text": "cases.case_05.lab_items.cocaine_pack.target_text",
+            "img": "images/cock",
+            "item_type": "chemicals",
+            "analyze_time": 14400,
+            "analyze_movie": "m25",
+            "on_analyze": [
+                {"set_suspect_state": {"suspect": "bolton", "state": "dialog_2"}},
+                {"add_forensic_item": "cocaine_pack"},
+                {"progress_chapter": "209_explored_lab_item_cocaine_pack"}
+            ]
+        },
+        "drug": {
+            "name": "cases.case_05.lab_items.drug.name",
+            "target_text": "cases.case_05.lab_items.drug.target_text",
+            "img": "images/cock_pile",
+            "item_type": "chemicals",
+            "analyze_time": 43200,
+            "analyze_movie": "m33",
+            "on_analyze": [
+                {"update_suspect_state": {
+                    "suspect": "banksy",
+                    "clues": ["drug"],
+                    "text": "cases.case_05.add_suspect_clues.banksy.drug"
+                }},
+                {"set_suspect_state": {"suspect": "banksy", "state": "dialog_2"}},
+                {"add_forensic_item": "drug"},
+                {"progress_chapter": "305_explored_lab_item_drug"}
+            ]
+        },
+        "dianas_letter": {
+            "name": "cases.case_05.lab_items.dianas_letter.name",
+            "target_text": "cases.case_05.lab_items.dianas_letter.target_text",
+            "img": "images/envelope",
+            "item_type": "docs",
+            "analyze_time": 3600,
+            "analyze_movie": "m42",
+            "on_analyze": [
+                {"update_suspect_state": {
+                    "suspect": "morgan",
+                    "motive": true,
+                    "text": "cases.case_05.add_motive.morgan"
+                }},
+                {"add_forensic_item": "dianas_letter"},
+                {"progress_chapter": "410_explored_lab_item_dianas_letter"},
+                {"check_transition": "accuse_morgan"}
+            ]
+        },
+        "morgans_letter": {
+            "name": "cases.case_05.lab_items.morgans_letter.name",
+            "target_text": "cases.case_05.lab_items.morgans_letter.target_text",
+            "img": "images/envelope2",
+            "item_type": "docs",
+            "analyze_time": 3600,
+            "analyze_movie": "m43",
+            "on_analyze": [
+                {"add_forensic_item": "morgans_letter"},
+                {"progress_chapter": "409_explored_lab_item_morgans_letter"},
+                {"check_transition": "accuse_morgan"}
+            ]
+        },
+        "analyze_morgan_accounts": {
+            "name": "cases.case_05.lab_items.analyze_morgan_accounts.name",
+            "target_text": "cases.case_05.lab_items.analyze_morgan_accounts.target_text",
+            "img": "images/schet",
+            "item_type": "docs",
+            "analyze_time": 10800,
+            "analyze_movie": "m46",
+            "on_analyze": [
+                {"set_scene_state": {"scene": "scene_5", "state": "2"}},
+                {"progress_chapter": "411_explored_lab_item_analyze_morgan_accounts"}
+            ]
+        }
+    },
+    "clues": {
+        "man_185": {
+            "img": "images/man_1-85"
+        },
+        "tolstovka": {
+            "img": "images/tolstovka"
+        },
+        "scotch": {
+            "img": "images/scotch"
+        },
+        "sled_44": {
+            "img": "images/otpechatok"
+        },
+        "drug": {
+            "img": "images/cock"
+        }
+    },
+    "suspect_properties": {
+        "prop_1": "age",
+        "prop_2": "weight"
+    },
+    "suspects" : {
+        "tyler": {
+            "clues": {
+                "man_185": {
+                    "match": false
+                },
+                "tolstovka": {
+                    "img": "images/tolstovka",
+                    "match": true
+                },
+                "scotch": {
+                    "img": "images/scotch",
+                    "match": true
+                },
+                "sled_44": {
+                    "img": "images/otpechatok",
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_friend",
+                    "portrait": "images/friend_portret",
+                    "title": "cases.case_05.suspects.tyler.states.default.title",
+                    "status": "cases.case_05.suspects.tyler.states.default.status",
+                    "prop_1": "cases.case_05.suspects.tyler.states.default.prop_1",
+                    "prop_2": "cases.case_05.suspects.tyler.states.default.prop_2",
+                    "target_text": "cases.case_05.suspects.tyler.states.default.target_text"
+                },
+                "dialog_1": {
+                    "talk_movie": "m7",
+                    "on_talk": [
+                        {"update_suspect_state": {
+                            "suspect": "tyler",
+                            "clues": ["sled_44", "man_185"],
+                            "text": "cases.case_05.add_suspect_clues.tyler.sled_44.man_185"
+                        }},
+                        {"open_new_scene": "scene_2"},
+                        {"set_scene_state": {"scene": "scene_2", "state": "1"}},
+                        {"show_movie": "m8"},
+                        {"progress_chapter": "106_suspect_tyler_dialog_1"}
+                    ]
+                },
+                "dialog_2": {
+                    "talk_movie": "m17",
+                    "on_talk": [
+                        {"update_suspect_state": {
+                            "suspect": "tyler",
+                            "motive": true,
+                            "text": "cases.case_05.add_motive.tyler"
+                        }},
+                        {"progress_chapter": "204_suspect_tyler_dialog_2"},
+                        {"show_movie": "m18"},
+                        {"add_custom_task": "informant"}
+                    ]
+                },
+                "dialog_3": {
+                    "talk_movie": "m29",
+                    "on_talk": [
+                        {"open_new_scene": "scene_5"},
+                        {"set_scene_state": {"scene":"scene_5", "state": "1"}},
+                        {"progress_chapter": "302_suspect_tyler_dialog_3"}
+                    ]
+                },
+                "dialog_4": {
+                    "talk_movie": "m36",
+                    "on_talk": [
+                        {"open_new_scene": "scene_6"},
+                        {"set_scene_state": {"scene":"scene_6", "state": "1"}},
+                        {"progress_chapter": "401_suspect_tyler_dialog_4"}
+                    ]
+                }
+            }
+        },
+        "banksy": {
+            "clues": {
+                "sled_44": {
+                    "img": "images/otpechatok",
+                    "match": true
+                },
+                "scotch": {
+                    "img": "images/scotch",
+                    "match": true
+                },
+                "tolstovka": {
+                    "img": "images/tolstovka",
+                    "match": true
+                },
+                "drug": {
+                    "img": "images/cock_pile",
+                    "match": true
+                },
+                "man_185": {
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_murderer",
+                    "portrait": "images/murderer_portret",
+                    "title": "cases.case_05.suspects.banksy.states.default.title",
+                    "status": "cases.case_05.suspects.banksy.states.default.status",
+                    "prop_1": "cases.case_05.suspects.banksy.states.default.prop_1",
+                    "prop_2": "cases.case_05.suspects.banksy.states.default.prop_2",
+                    "target_text": "cases.case_05.suspects.banksy.states.default.target_text"
+                },
+                "hidden": {
+                    "img": "images/tyler_big",
+                    "title": "cases.case_05.suspects.banksy.states.hidden.title",
+                    "status": "cases.case_05.suspects.banksy.states.hidden.status",
+                    "prop_1": "cases.case_05.suspects.banksy.states.hidden.prop_1",
+                    "prop_2": "cases.case_05.suspects.banksy.states.hidden.prop_2",
+                    "talkable": false
+                },
+                "dialog_1": {
+                    "talk_movie": ["m28", "m28_1"],
+                    "on_talk": [
+                        {"update_suspect_state": {
+                            "suspect": "banksy",
+                            "clues": ["sled_44", "man_185"],
+                            "alibi": false,
+                            "text": "cases.case_05.add_suspect_clues.banksy.sled_44.man_185"
+                            }
+                        },
+                        {"set_suspect_state": {"suspect": "tyler", "state": "dialog_3"}},
+                        {"progress_chapter": "301_suspect_banksy_dialog_1"}
+                    ]
+                },
+                "dialog_2": {
+                    "talk_movie": "m33_1",
+                    "on_talk": [
+                        {"check_transition": "accuse_banksy"},
+                        {"progress_chapter": "307_suspect_banksy_dialog_2"}
+                    ]
+                }
+            }
+        },
+        "bolton": {
+            "clues": {
+                "tolstovka": {
+                    "match": true
+                }
+            },
+            "states": {
+                "default": {
+                    "img": "images/char_thieft",
+                    "portrait": "images/thieft_portret",
+                    "title": "cases.case_05.suspects.bolton.states.default.title",
+                    "status": "cases.case_05.suspects.bolton.states.default.status",
+                    "prop_1": "cases.case_05.suspects.bolton.states.default.prop_1",
+                    "prop_2": "cases.case_05.suspects.bolton.states.default.prop_2",
+                    "target_text": "cases.case_05.suspects.bolton.states.default.target_text"
+                },
+                "dialog_1": {
+                    "talk_movie": ["m22", "m22_2"],
+                    "on_talk": [
+                        {"update_suspect_state": {
+                            "suspect": "bolton",
+                            "clues": ["tolstovka"],
+                            "alibi": false,
+                            "text": "cases.case_05.add_suspect_clues.bolton.tolstovka.man_185"
+                        }},
+                        {"progress_chapter": "206_suspect_bolton_dialog_1"},
+                        {"add_custom_task": "bolton_deduction"}
+                    ]
+                },
+                "dialog_2": {
+                    "talk_movie": "m26",
+                    "on_talk": [
+                        {"progress_chapter": "210_suspect_bolton_dialog_2"},
+                        {"add_start_next_chapter_task": {"cost": 2}}
+                    ]
+                }
+            }
+        },
+        "morgan": {
+            "states": {
+                "default": {
+                    "img": "images/char_boutique_owner",
+                    "portrait": "images/boutique_owner_portret",
+                    "title": "cases.case_05.suspects.morgan.states.default.title",
+                    "status": "cases.case_05.suspects.morgan.states.default.status",
+                    "prop_1": "cases.case_05.suspects.morgan.states.default.prop_1",
+                    "prop_2": "cases.case_05.suspects.morgan.states.default.prop_2",
+                    "target_text": "cases.case_05.suspects.morgan.states.default.target_text"
+                },
+                "dialog_1": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m38",
+                    "on_talk": [
+                        {"update_suspect_state": {
+                            "suspect": "morgan",
+                            "alibi": true,
+                            "text": "cases.case_05.add_alibi.morgan"
+                        }},
+                        {"set_scene_state": {"scene": "scene_6", "state": "2"}},
+                        {"progress_chapter": "404_suspect_morgan_dialog_1"}
+                    ]
+                },
+                "dialog_2": {
+                    "action_text": "tasks.talk.action_text2",
+                    "talk_movie": "m48_1",
+                    "on_talk": [
+                        {"progress_chapter": "414_suspect_morgan_dialog_2"},
+                        {"add_custom_task": "special_arrest"}
+                    ]
+                }
+            }
+        }
+    },
+    "info": {
+        "victim": {
+            "found": {
+                "name": "cases.case_05.info.victim.found.name",
+                "description": "cases.case_05.info.victim.found.description",
+                "img": "images/dead_pic"
+            },
+            "analyzed": {
+                "name": "cases.case_05.info.victim.analyzed.name",
+                "description": "cases.case_05.info.victim.analyzed.description",
+                "img": "images/Diana_portret"
+            }
+        },
+        "weapon": {
+            "found": {
+                "name": "cases.case_05.info.weapon.found.name",
+                "description": "cases.case_05.info.weapon.found.description",
+                "img": "images/revolver"
+            }
+        },
+        "killer": {
+            "arrested": {
+                "name": "cases.case_05.info.killer.arrested.name",
+                "description": "cases.case_05.info.killer.arrested.description",
+                "img": "images/murderer_portret"
+            }
+        }
+    },
+    "chapters": [{
+        "size": 10,
+        "img": "images/chapter_51",
+        "name": "cases.case_05.chapters.1.name",
+        "description": "cases.case_05.chapters.1.description",
+        "on_start": []
+    }, {
+        "size": 11,
+        "img": "images/chapter_52",
+        "name": "cases.case_05.chapters.2.name",
+        "description": "cases.case_05.chapters.2.description",
+        "on_start": [
+            {"show_movie": "m13"},
+            {"open_new_scene": "scene_3"},
+            {"set_scene_state": {"scene": "scene_3", "state": "1"}}
+        ]
+    }, {
+        "size": 8,
+        "img": "images/chapter_54",
+        "name": "cases.case_05.chapters.3.name",
+        "description": "cases.case_05.chapters.3.description",
+        "on_start": [
+            {"show_movie": "m27"},
+            {"set_suspect_state": {"suspect": "banksy", "state": "dialog_1"}}
+        ]
+    }, {
+        "size": 16,
+        "img": "images/chapter_53",
+        "name": "cases.case_05.chapters.4.name",
+        "description": "cases.case_05.chapters.4.description",
+        "description_end": "cases.case_05.chapters.4.description_end",
+        "on_start": [
+            {"show_movie": "m35"},
+            {"set_suspect_state": {"suspect": "tyler", "state": "dialog_4"}}
+        ]
+    }],
+    "on_start": [
+        {"show_movie": "m1"},
+        {"open_new_scene": "scene_1"},
+        {"set_scene_state": {"scene": "scene_1", "state": "1"}}
+    ],
+    "arrest": {
+        "killer": "banksy",
+        "on_success": [
+            {"show_movie": "m34_1"},
+            {"progress_chapter": "308_init_arrest_state_banksy"},
+            {"set_info_state": {"type": "killer", "state": "arrested"}},
+            {"add_start_next_chapter_task": {"cost": 2}}
+        ],
+        "on_fail": [
+            {"show_movie": "m_wrong_arrest"}
+        ]
+    },
+    "transitions": {
+        "accuse_tyler": {
+            "preconditions": [
+                {"forensic_item_state": {"body": "explored"}},
+                {"lab_item_state": {"sled": "done"}},
+                {"forensic_item_state": {"note": "explored"}},
+                {"forensic_item_state": {"pistol": "explored"}}
+            ],
+            "on_complete": [
+                {"show_movie": "m5_1"},
+                {"set_suspect_state": {"suspect": "tyler", "state": "dialog_1"}}
+            ]
+        },
+        "end_chapter_1": {
+            "preconditions": [
+                {"lab_item_state": {"scotch": "done"}},
+                {"forensic_item_state": {"smartphone": "explored"}}
+            ],
+            "on_complete": [
+                {"add_start_next_chapter_task": {"cost": 2}}
+            ]
+        },
+        "accuse_banksy": {
+            "preconditions": [
+                {"forensic_item_state": {"scotch_2": "explored"}},
+                {"suspect_state_talked": {"banksy": "dialog_2"}},
+                {"forensic_item_state": {"stack_of_photos": "explored"}}
+            ],
+            "on_complete": [
+                {"show_movie": "m34"},
+                {"init_arrest_state": null}
+            ]
+        },
+        "accuse_morgan": {
+            "preconditions": [
+                {"lab_item_state": {"morgans_letter": "done"}},
+                {"lab_item_state": {"dianas_letter": "done"}},
+                {"forensic_item_state": {"morgans_photos": "explored"}}
+            ],
+            "on_complete": [
+                {"show_movie": "m45"},
+                {"add_lab_item": "analyze_morgan_accounts"}
+            ]
+        }
+    },
+    "deductions": {
+        "bolton": {
+            "suspect_img": "images/char_thieft",
+            "background_img": "images/_back_lab"
+        }
+    },
+    "custom_tasks": {
+        "informant": {
+            "cost": 1,
+            "img": "images/jose_portret",
+            "action_text": "cases.case_05.custom_tasks.informant.action_text",
+            "target_text": "cases.case_05.custom_tasks.informant.target_text",
+            "on_click": [
+                {"show_movie": "m19"},
+                {"add_forensic_item": "ronsun_watch"},
+                {"progress_chapter": "205_custom_task_informant"}
+            ]
+        },
+        "bolton_deduction": {
+            "cost": 1,
+            "img": "images/thieft_portret",
+            "action_text": "tasks.deduction.action_text",
+            "target_text": "cases.case_05.custom_tasks.bolton_deduction.target_text",
+            "on_click": [
+                {"show_deductiond": "bolton"},
+                {"show_movie": "m22_1"},
+                {"progress_chapter": "207_custom_task_bolton_deduction"},
+                {"show_movie": "m23"},
+                {"open_new_scene": "scene_4"},
+                {"set_scene_state": {"scene": "scene_4", "state": "1"}}
+            ]
+        },
+        "special_arrest": {
+            "cost": 1,
+            "img": "images/boutique_owner_portret",
+            "action_text": "tasks.arrest.action_text",
+            "target_text": "cases.case_05.suspects.morgan.states.default.target_text",
+            "on_click": [
+                {"show_movie": "m49"},
+                {"set_suspect_state": {"suspect": "morgan", "state": "default"}},
+                {"progress_chapter": "415_custom_task_special_arrest_morgan"},
+                {"add_custom_task": "cross_examination"}
+            ]
+        },
+        "cross_examination": {
+            "img": "images/perecrestni_dopros",
+            "action_text": "cases.case_05.custom_tasks.cross_examination.action_text",
+            "target_text": "cases.case_05.custom_tasks.cross_examination.target_text",
+            "cost": 1,
+            "on_click": [
+                {"show_movie": "m50"},
+                {"show_movie": "m51"},
+                {"set_suspect_state": {"suspect": "tyler", "state": "default"}},
+                {"progress_chapter": "416_custom_task_cross_examination"},
+                {"add_unlock_new_case_task": {"case": "case_06", "cost": 2}}
+            ]
+        }
+    }
+}

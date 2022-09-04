@@ -1,0 +1,16 @@
+= render 'form'
+
+- if @payments.any?
+  %table.table.table-stripped
+    %tr
+      %th Payment Code
+      %th Product Code
+      %th Redeemed
+      %th Date
+    - @payments.each do |payment|
+      %tr
+        %td=payment['payment_code']
+        %td=payment['product_code']
+        %td=payment['redeemed']
+        %td=Time.zone.parse(payment['createdAt']).strftime('%b %d, %Y %H:%M:%S')
+

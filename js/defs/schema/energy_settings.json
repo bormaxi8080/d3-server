@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "energy_settings",
+    "type": "object",
+    "required": [ "max_energy", "energy_restore_time", "scene_cost", "full_scene_cost" ],
+    "additionalProperties": false,
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["energy_settings"] },
+        "max_energy": {"type": "integer"},
+        "energy_restore_time": {"type": "integer"},
+        "scene_cost": {"type": "integer"},
+        "full_scene_cost": {"type": "integer"}
+    }
+}

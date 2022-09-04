@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "case_settings",
+    "required": [ "stars_per_scene", "default_minigame_cost", "default_suspect_talk_cost", "default_suspect_arrest_cost", "chapter_reward" ],
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["case_settings"] },
+        "stars_per_scene": {"type": "integer"},
+        "default_minigame_cost": {"type": "integer"},
+        "default_suspect_talk_cost": {"type": "integer"},
+        "default_suspect_arrest_cost": {"type": "integer"},
+        "chapter_reward": {
+            "type": "object",
+            "required": ["progress", "end"],
+            "properties":{
+                "progress": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required":["xp", "money"],
+                    "properties":{
+                        "xp": {"type": "integer"},
+                        "money": {"type": "integer"}
+                    }
+                },
+                "end": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required":["xp", "money"],
+                    "properties": {
+                        "xp": {"type": "integer"},
+                        "money": {"type": "integer"}
+                    }
+                }
+            }
+        }
+    }
+}
+
+

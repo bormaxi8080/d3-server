@@ -1,0 +1,37 @@
+{
+    "schema_id": "partner_fakes",
+    "partners": {
+        "detective": {
+            "reset_time": 0,
+            "hints": 1,
+            "scores": 400000,
+            "level": 86,
+            "img": "images/detective_portrait",
+            "name": "mov_detective"
+        },
+        "secretary": {
+            "reset_time": 21600,
+            "hints": 2,
+            "scores": 550000,
+            "level": 45,
+            "img": "images/secretary_portrait",
+            "name": "mov_sec"
+        },
+        "hacker": {
+            "reset_time": 21600,
+            "hints": 2,
+            "scores": 600000,
+            "level": 64,
+            "img": "images/hacker_portrait",
+            "name": "mov_hacker"
+        },
+        "informer": {
+            "reset_time": 21600,
+            "hints": 2,
+            "scores": 300000,
+            "level": 36,
+            "img": "images/informer_portrait",
+            "name": "mov_informator"
+        }
+    }
+}

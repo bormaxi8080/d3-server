@@ -1,0 +1,215 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "quest",
+    "template": "quests/quest",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["quest"] },
+        "auto_accept": { "type": "boolean", "default": true },
+        "hidden": { "type": "boolean", "default": false },
+        "duration": { "type": "integer", "title": "продолжительность квеста" },
+        "show_guide_hints": { "type": "boolean"},
+        "view": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [ "title", "description", "pics", "line" ],
+            "properties": {
+                "title": { "type": "string", "localized": true },
+                "description": { "type": "string", "localized": true },
+                "line": { "type": "string" },
+                "npc_id": { "type": "string" },
+                "locations_mask": { "type": "integer", "title": "bit4 - npc_only, bit3 - not_my, bit1 - not_ally, bit0 - ally_only"},
+                "reward_preview": { "type": "string" },
+                "pics": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [ "big", "medium", "small" ],
+                    "properties": {
+                        "big": { "type": "string" },
+                        "medium": { "type": "string" },
+                        "small": { "type": "string" }
+                    }
+                }
+            }
+        },
+        "sharing": { "$ref": "sharing_settings#/definitions/sharing_setting" },
+        "start": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "conditions": { "$ref": "#/definitions/conditions" },
+                "effects": { "$ref": "base#/definitions/effects" }
+            }
+        },
+        "complete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "conditions": {
+                    "allOf": [
+                        { "$ref": "#/definitions/conditions" },
+                        {
+                            "minProperties": 1,
+                            "maxProperties": 3,
+                            "default": {
+                                "_0": {},
+                                "_1": {},
+                                "_2": {}
+                            }
+                        }
+                    ]
+                },
+                "effects": { "$ref": "base#/definitions/effects" }
+            }
+        }
+    },
+
+    "definitions":
+    {
+        "conditions": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^_\\d+$": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "expand": true,
+                    "properties": {
+                        "type": { "type": "string", "enum": [ "have", "event" ] },
+                        "name": {
+                            "type": "string",
+                            "enum": [
+                                "map_item",
+                                "allies",
+                                "resource",
+                                "param",
+                                "quest_complete",
+                                "time",
+                                "expand",
+                                "look",
+                                "fake",
+                                "click",
+                                "buff_click",
+                                "friend_click",
+                                "move",
+                                "use_item",
+                                "buy",
+                                "buy_resource",
+                                "sell",
+                                "sell_resource",
+                                "set_kingdom_name",
+                                "place_from_storage",
+                                "craft_item",
+                                "rotate",
+                                "color",
+                                "use_service_result",
+                                "plant_crop",
+                                "update_look"
+                            ]
+                        },
+                        "description": { "type": "string", "localized": true },
+                        "buy_cost": { "type": "integer", "title": "цена покупки в коронах" },
+
+                        "hint": { "type": "string", "localized": true },
+                        "img": { "type": "string" },
+
+                        "count": { "type": "integer", "title": "счетчик выполнения условия" },
+                        "default_progress": {"type": "integer", "title": "дефолтное значение прогресса для инкрементальных квестов"},
+                        "friend_actions": { "type": "integer", "title": "по N-действий у каждого друга" },
+                        "room_id": { "type": "integer" },
+
+                        "use_expressions": { "type": "boolean" },
+                        "hold_max_progress": { "type": "boolean" },
+                        "increment": { "type": "boolean", "title": "считать не все объекты" },
+                        "different_friends": { "type": "boolean", "title": "по одному у каждого друга" },
+                        "isAlly": { "type": "boolean" },
+
+                        "tag": { "type": "string", "title": "соответствие тэгам" },
+                        "active": { "type": "string" },
+                        "show_object": { "type": "string" },
+                        "location": { "type": "string" },
+
+                        "params": { "type": "object", "title": "доп. параметры" },
+                        "state_def": { "type": "object", "title": "состояние объекта" },
+                        "def": { "type": "object", "title": "соответствие описанию объекта" },
+
+                        "room_access": {
+                            "type": "object",
+                            "title": "условие по комнатам",
+                            "additionalProperties": false,
+                            "properties": {
+                                "white_list": {
+                                    "type": "array",
+                                    "items": {"type": "integer"}
+                                },
+                                "black_list": {
+                                    "type": "array",
+                                    "items": {"type": "integer"}
+                                }
+                            }
+                        },
+                        "button": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "label": { "type": "string", "localized": true },
+                                "show": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "x": { "type": "integer" },
+                                        "y": { "type": "integer" },
+                                        "type_id": { "type": "string" },
+                                        "tag": { "type": "string" },
+                                        "use_condition_filter": { "type": "boolean" },
+                                        "def": {"type": "object"},
+                                        "state": {"type": "object"},
+                                        "state_def": {"type": "object"}
+                                    }
+                                },
+                                "shop": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "type_id": { "type": "string" },
+                                        "tag": { "type": "string" },
+                                        "main": { "type": "string" },
+                                        "sub": { "type": "string" }
+                                    }
+                                },
+                                "craft": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "type_id": { "type": "string" }
+                                    }
+                                },
+                                "inventory": {
+                                    "title": "показать инвентаре",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "type_id": { "type": "string" },
+                                        "group": { "$ref": "base#/definitions/inventory_group" }
+                                    }
+                                },
+                                "look": {
+                                    "type": "object",
+                                    "title": "окно кастомайза",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "cloth_type": {
+                                            "type": "string",
+                                            "enum": [ "headwear", "hair", "face", "body", "pants" ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

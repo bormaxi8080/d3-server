@@ -1,0 +1,11 @@
+*/npm-debug.log
+server/config/secret.yml
+server/node_modules/*
+server/logs/*
+server/tmp/*
+server/test/tmp/*
+static/bin/*
+js/defs/version.json
+*/Gemfile.lock
+static/assets/*
+server/*/secret.yml

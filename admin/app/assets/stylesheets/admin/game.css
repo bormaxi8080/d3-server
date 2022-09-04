@@ -1,0 +1,81 @@
+.top_menu {font-size: 14px; padding: 0 0 20px 0}
+
+#loader {
+    display: none;
+}
+
+#jsoneditor {
+    padding-top: 10px;
+}
+
+#editor {
+    position: absolute;
+    width: 700px;
+    height: 300px;
+}
+
+#level .slider-selection {
+    background: #0e90d2;
+}
+
+div#ok {
+    color: green;
+}
+
+div#error, div#fatal {
+    color: red;
+}
+
+div#warn {
+    color: #F728F4;
+}
+
+#failed-users-list {
+    display: none;
+}
+
+.increase_text {
+    color: #0000CD;
+}
+
+.unchanged_text {
+    color: #000000;
+}
+
+.decrease_text {
+    color: #FF0000;
+}
+
+.small_date {
+    font-weight: 10px;
+}
+
+.payment {
+    font-weight: bold;
+}
+
+.selected-user {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#drop-dump {
+    margin-left: 5px;
+}
+
+.user-selector .form-inline {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.user-selector #network_code {
+    max-width: 90px;
+}
+
+.backup-list {
+    margin-top: 10px;
+}
+
+.clone-from {
+    margin-top: 5px;
+}

@@ -1,0 +1,70 @@
+:server:
+  :secret_key: '1234567'
+  :session_lock_duration: 30
+  :defs_repository: 'git@gitlab.sqtools.ru:enchanted_configs.git'
+  :static_dir: '../../static'
+  :cdn_cache:
+    :root_url: 'http://mb.static.socialquantum.ru/cdn/enchanted/'
+
+:vertica:
+  :ios:
+    :key: '88,90'
+    :tables:
+      :cpu: 'view_cpu_data_dragonlands_dragonlands'
+      :evt: 'view_evt_dragonlands'
+  :int_ios:
+    :key: '106,105'
+    :tables:
+      :cpu: 'view_cpu_data_dragonsworld'
+      :evt: 'view_custom_evt_dragonsworld'
+  :int_android:
+    :key: '104'
+    :tables:
+      :cpu: 'view_cpu_data_dragonsworld'
+      :evt: 'view_custom_evt_dragonsworld'
+
+:node_backends:
+  :local:
+    :node_backend: 'http://127.0.0.1:3000/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :web_alpha:
+    :node_backend: 'http://sqware-dev.socialquantum.ru/mzoo_web/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :fight_alpha:
+    :node_backend: 'http://sqware-dev.socialquantum.ru/mzoo_fight/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :prod:
+    :node_backend: 'http://88.212.226.118/mzoo_beta/mzoo_web/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :beta2:
+    :node_backend: 'http://88.212.226.118/mzoo_beta2/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :beta3:
+    :node_backend: 'http://88.212.226.118/mzoo_beta3/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+  :int_prod:
+    :node_backend: 'http://nweb26.socialquantum.com/mzoo_int_prod/backend'
+    :secret_key: '0e616dc02e3b538e077454ff93e4eca6'
+
+:admin:
+  :bin_path: '../../static/_bin'
+  :node_backend: 'http://127.0.0.1:3000/backend/'
+  :node_secret: '0e616dc02e3b538e077454ff93e4eca6'
+  :application_server: 'Enchanted::Server'
+  :js_dir: '../../static/_bin/admin_users' #Rails.root.join(admin_app_dir)
+  :node_config_path: '../../server/config/'
+  :init_user_map: 'init_admin_room.json'
+  :hash_dictionary: 'config/server/common/stats_map.json'
+
+game_server:
+  backend: 'http://127.0.0.1:3000/backend'
+  ping_url: '/health'
+  internal_sig: '0e616dc02e3b538e077454ff93e4eca6'
+
+shards:
+  shard_0:
+    db: "detective_development_node_0"
+    db_cfg: "common"
+  shard_1:
+    db: "detective_development_node_1"
+    db_cfg: "common"

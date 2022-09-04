@@ -1,0 +1,8 @@
+{
+    "schema_id": "partner_settings",
+    "reset_time": 21600,
+    "reset_partner_seconds_per_cash": 300,
+    "unlock_repeat_interval": 86400,
+    "unlock_requests_required": 3,
+    "unlock_cost_per_request": 7
+}

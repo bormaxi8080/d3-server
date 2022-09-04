@@ -1,0 +1,20 @@
+{
+    "schema_id": "info",
+    "default_states": {
+        "weapon": {
+            "img": "",
+            "name": "info.default_states.weapon.name",
+            "description": "info.default_states.weapon.description"
+        },
+        "victim": {
+            "img": "",
+            "name": "info.default_states.victim.name",
+            "description": "info.default_states.victim.description"
+        },
+        "killer": {
+            "img": "",
+            "name": "info.default_states.killer.name",
+            "description": "info.default_states.killer.description"
+        }
+    }
+}

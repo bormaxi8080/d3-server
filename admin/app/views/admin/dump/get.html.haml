@@ -1,0 +1,14 @@
+- if @errors
+  %div{:style=>'font-size:18px; font-weight: bold; margin: 10px 0px 20px 0;'}
+    Возникли ошибки при загрузке дампа:
+    %div{:style => 'font-weight:normal; font-size:16px; padding: 10px; background-color: #FFD6CB; border: 1px solid #000;'}
+      %ul
+        = @errors.each do |error|
+          %li
+            = error
+%table
+  %tr{:valign => 'top'}
+    %td
+      = render 'form'
+    %td
+      = render 'form_upload'

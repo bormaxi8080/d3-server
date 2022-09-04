@@ -1,0 +1,49 @@
+{
+    "name": "sqware",
+    "version": "0.0.1",
+    "private": true,
+    "main": "./lib/SqWare.js",
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "assert":       "0.4.9",
+        "async":        "0.7.0",
+        "bunyan":       "0.22.1",
+        "colors":       "0.6.0-1",
+        "commander":    "1.0.5",
+        "cycle":        "1.0.1",
+        "events":       "0.5.0",
+        "exec-sync":    "0.1.6",
+        "ffi":          "1.2.3",
+        "glob":         "3.2.7",
+        "graceful-fs":  "1.1.14",
+        "inherits":     "1.0.0",
+        "js-yaml":      "3.0.2",
+        "memcached":    "0.2.3",
+        "minimatch":    "0.2.9",
+        "formidable":   "1.0.14",
+        "moment":       "1.7.2",
+        "path":         "0.4.9",
+        "pg":           "0.8.7",
+        "pkginfo":      "0.3.0",
+        "request":      "2.21.0",
+        "restler":      "3.2.0",
+        "sequelize":    "git+ssh://git@gitlab.sqtools.ru:fork_sequelize.git",
+        "stack-trace":  "0.0.6",
+        "walk":         "2.2.1",
+        "wrench":       "1.4.4",
+        "node-v8-clone": "0.4.5",
+        "underscore":   "1.6.0"
+    },
+    "devDependencies": {
+        "fibers":       "*",
+        "node-native-zip": "*",
+        "mocha":        "*",
+        "mocha-subject":"*",
+        "chai":         "*",
+        "sinon":        "*",
+        "sinon-chai":   "*",
+        "node-inspector": "*"
+    }
+}

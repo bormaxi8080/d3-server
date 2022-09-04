@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "levels",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["levels_list"],
+    "properties": {
+        "schema_id": { "type": "string", "enum": ["levels"] },
+        "levels_list": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["required_xp", "reward"],
+                "properties": {
+                    "required_xp": {"type": "integer"},
+                    "reward": {
+                        "type": "object",
+                        "required": ["real_balance", "game_balance"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "real_balance": {"type": "integer"},
+                            "game_balance": {"type": "integer"}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
